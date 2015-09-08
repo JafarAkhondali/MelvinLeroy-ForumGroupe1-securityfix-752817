@@ -32,6 +32,22 @@ for ( $i = 0; $i < count($result); $i++ ) {
 }
 
 ?>
+<?php
+
+$dsn = 'mysql:host=localhost;dbname=forumgroupe1';
+$user = 'root';
+$pass = '';
+
+$pdo = new PDO(
+	$dsn,
+	$user,
+	$pass
+);
+
+$request = $pdo->query('SELECT * FROM users;');
+$result = $request->fetchAll();
+?>
 <a href="creer-article.html"> Créer un article &raquo;</a>
+<a href="profilforum.php?id=<?=$result[$i]['id']?>"> Mon profil</a>
 </body>
 </html>
