@@ -13,7 +13,7 @@ $pdo = new PDO(
 );
 
 $request = $pdo->query(
-	'INSERT INTO `users`(id, email, password) VALUES (NULL,"' . $_POST['email'] . '","' . $_POST['password']. '");'
+	'INSERT INTO `users`(id, email, password,pseudo) VALUES (NULL,"' . $_POST['email'] . '","' . $_POST['password']. '","'.$_POST['pseudo'].'");'
 );
 $request2= $pdo->query(
 	'SELECT email FROM users WHERE email="' . $_POST['email'] . '";'
