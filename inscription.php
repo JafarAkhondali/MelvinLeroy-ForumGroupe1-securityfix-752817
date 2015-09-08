@@ -2,7 +2,7 @@
 
 session_start();
 
-$dsn = 'mysql:host=localhost;dbname=admin';
+$dsn = 'mysql:host=localhost;dbname=forumgroupe1';
 $user = 'root';
 $pass = '';
 
