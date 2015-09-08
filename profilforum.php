@@ -40,8 +40,8 @@ if (empty ($_SESSION['user']) ) {
 <p>Password: <?=$result[0]['password']?></p>
 <p>Description: <?=$result[0]['description']?></p>
 </div>
-
-
+<a href="modifierprofil.php">Modifier mes informations</a>
+<a href="deconnexion.php">Log Out</a>
 	
 </body>
 </html>
