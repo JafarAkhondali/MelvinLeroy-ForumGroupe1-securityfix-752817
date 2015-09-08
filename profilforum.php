@@ -8,6 +8,9 @@
 </head>
 <body>
 <?php
+
+session_start();
+
 $dsn = 'mysql:host=localhost;dbname=forumgroupe1';
 $user = 'root';
 $pass = '';
@@ -26,10 +29,10 @@ $result = $request->fetchAll();
 
 <h1>Page de profil</h1>
 <div class="container">
-<p>Pseudo:?<?=$result[$i]['titre']?></p>
-<p>Email:</p>
-<p>Password:</p>
-<p>Description:</p>
+<p>Pseudo: <?=$result[0]['pseudo']?></p>
+<p>Email: <?=$result[0]['email']?></p>
+<p>Password: <?=$result[0]['password']?></p>
+<p>Description: <?=$result[0]['description']?></p>
 </div>
 
 
