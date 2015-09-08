@@ -21,8 +21,14 @@ $pdo = new PDO(
 	$pass
 );
 
-$request = $pdo->query('SELECT * FROM users;');
+$request = $pdo->query('SELECT * FROM users WHERE id= "' . $_SESSION['user']['id'] . '";');
 $result = $request->fetchAll();
+
+if (empty ($_SESSION['user']) ) {
+	header('Location: connexion.html');
+	die();
+}
+
 
 ?>
 
