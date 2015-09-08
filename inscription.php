@@ -22,7 +22,7 @@ $result = $request2->fetchAll();
 
 
 if ( $request ) {
-	 header('Location: inscrire.php');
+	 header('Location: connexion.html');
 	 
 } else {
 

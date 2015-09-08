@@ -32,5 +32,6 @@ for ( $i = 0; $i < count($result); $i++ ) {
 }
 
 ?>
+<a href="creer-article.html"> Créer un article &raquo;</a>
 </body>
 </html>
