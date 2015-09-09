@@ -2,6 +2,14 @@
 <head>
 </head>
 <body>
+<style scoped>
+body{
+	font:16px sans-serif;
+}
+h2{
+	background: black;
+}
+</style>
 <?php
 
 session_start();
@@ -34,7 +42,7 @@ for ( $i = 0; $i < count($result); $i++ ) {
 }
 
 ?>
-<a href="creer-article.html"> Créer un article &raquo;</a>
+<a href="créearticles.html"> Créer un article &raquo;</a>
 <?php
 
 $dsn = 'mysql:host=localhost;dbname=forumgroupe1';
