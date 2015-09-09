@@ -8,26 +8,36 @@
 <style scoped>
 body{
 	font:16px sans-serif;
-	background: url(image/new-wallpaper-14.jpg)scroll no-repeat 0 0;
+	background: url(image/wallpaper-1520964.jpg)scroll no-repeat 0 0;
 }
 h1{
 	text-align: center;
-	background: #00838f;
+	background: rgba(255,255,255,0.5) transparent;
 	width:250px;
 	border-radius:5px;
 	border:1px solid #000;
 	margin:0 auto;
+	box-shadow: 0 2px 2px #999;
+	color:blue;
 }
 .container{
-	background: #00838f;
+	background: rgba(255,255,255,0.5) transparent;
 	border-radius:5px;
 	border:1px solid #000;
 	width:350px;
 	padding:5px 0 5px 0;
 	margin:8px auto;
+	box-shadow: 0 2px 2px #999;
 }
 form{
 	text-align: center;
+}
+.btn{
+	border:1px solid #fff;
+	color:black;
+	border-radius:5px;
+	background:rgba(255,255,255,0.5);
+	width:100px;
 }
 </style>
 <form action="articleliste.php">
@@ -37,7 +47,7 @@ form{
 	<br />
 	<textarea placeholder="Ecrivez votre message"></textarea>
 	<br />
-	<input type="submit" value="Envoyez">
 	</div>
+	<input class="btn" type="submit" value="Envoyez">
 </body>
 </html>
