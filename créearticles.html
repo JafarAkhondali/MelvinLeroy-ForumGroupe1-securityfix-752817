@@ -11,20 +11,24 @@ body{
 	background: url(image/wallpaper-1520964.jpg)scroll no-repeat 0 0;
 }
 h1{
+	position:relative;
 	text-align: center;
-	background: rgba(255,255,255,0.5) transparent;
-	width:250px;
+	background:#90A4AE;
+	opacity:0.8;
+	width:550px;
 	border-radius:5px;
 	border:1px solid #000;
 	margin:0 auto;
 	box-shadow: 0 2px 2px #999;
-	color:blue;
+	color:white;
 }
 .container{
-	background: rgba(255,255,255,0.5) transparent;
+	background: #90A4AE;
+	opacity:0.8;
 	border-radius:5px;
 	border:1px solid #000;
-	width:350px;
+	width:550px;
+	height:290px;
 	padding:5px 0 5px 0;
 	margin:8px auto;
 	box-shadow: 0 2px 2px #999;
@@ -37,15 +41,22 @@ form{
 	color:black;
 	border-radius:5px;
 	background:rgba(255,255,255,0.5);
-	width:100px;
+	width:200px;
+}
+.textarea{
+	width:450px;
+	height:250px;
+}
+.art{
+	width:450px;
 }
 </style>
 <form action="articleliste.php">
 	<h1>Crée un article</h1>
 	<div class="container">
-	<input type="text" placeholder="Titre de l'article" name="titre">
+	<input class="art" type="text" placeholder="Titre de l'article" name="titre">
 	<br />
-	<textarea placeholder="Ecrivez votre message"></textarea>
+	<textarea class="textarea" placeholder="Ecrivez votre message"></textarea>
 	<br />
 	</div>
 	<input class="btn" type="submit" value="Envoyez">
