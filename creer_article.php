@@ -13,4 +13,4 @@ $pdo = new PDO(
 
 $pdo->query('INSERT INTO articles(titre, article) VALUES("' . $_POST['titre'] . '", "' . $_POST['article'] . '");');
 
-header('Location: article.html');
+header('Location: articles_liste.php');

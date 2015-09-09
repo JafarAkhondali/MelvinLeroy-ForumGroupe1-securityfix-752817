@@ -22,6 +22,7 @@ $result = $request->fetchAll();
 
 <h1><?=$result[0]['titre']?></h1>
 <p><?=$result[0]['article']?></p>
+<a href="articles_liste.php">Précédent</a>
 
 </body>
 </html>
