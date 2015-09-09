@@ -3,13 +3,56 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Creer un Article</title>
+	<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+	body{
+	    font: 16px 'Oxygen' , sans-serif ;
+		margin:0;
+		
+}
+
+
+h1{
+
+	 line-height:45px;
+     width:800px;
+     top: 0;
+     margin: 0 auto ;
+     background:#00838f;
+     box-shadow:0 2px 2px #999;
+     color: #fff;
+     text-align: center;
+     border-radius: 5px ;
+     letter-spacing :7px;
+
+}
+.container{
+	 width: 800px; 
+	 height: 210px;
+	border: solid 2px #e0e0e0;
+	background:#00838f;
+	color: #fff;
+	margin: 0 auto ;
+	border-radius: 5px ;
+}
+form{
+	text-align: center;
+	margin-top: 30px;
+}
+
+
+
+	</style>
 </head>
 <body>
+<div class="container">
+<h1>Crée un article</h1>
 <form action="creer_article.php" method="post">
 	<input type="text" placeholder="Titre de l'article" name="titre">
 	<br />
 	<textarea placeholder="Ecrivez votre message" name="article"></textarea>
 	<br />
 	<input type="submit" value="Envoyez">
+	</div>
 </body>
 </html>
