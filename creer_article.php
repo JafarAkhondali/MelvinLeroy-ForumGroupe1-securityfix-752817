@@ -11,6 +11,6 @@ $pdo = new PDO(
 	$pass
 );
 
-$pdo->query('INSERT INTO articles(titre, article) VALUES("' . $_POST['titre'] . '", "' . $_POST['article'] . '");');
+$pdo->query('INSERT INTO topics(title, description) VALUES("' . $_POST['title'] . '", "' . $_POST['description'] . '");');
 
 header('Location: articles_liste.php');

@@ -25,7 +25,7 @@ $pdo = new PDO(
 	$pass
 );
 
-$request = $pdo->query('SELECT * FROM articles;');
+$request = $pdo->query('SELECT * FROM topics;');
 $result = $request->fetchAll();
 
 //print_r($result);
@@ -33,7 +33,7 @@ $result = $request->fetchAll();
 for ( $i = 0; $i < count($result); $i++ ) {
 ?>
 
-<h2><?=$result[$i]['titre']?></h2>
+<h2><?=$result[$i]['tilre']?></h2>
 <a href="article.php?id=<?=$result[$i]['id']?>">lire</a>
 <br />
 <br />

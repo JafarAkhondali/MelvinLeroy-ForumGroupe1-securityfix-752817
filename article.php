@@ -15,7 +15,7 @@ $pdo = new PDO(
 	$pass
 );
 
-$request = $pdo->query('SELECT * FROM articles WHERE id = ' . $_GET['id'] . ';');
+$request = $pdo->query('SELECT * FROM topics WHERE id = ' . $_GET['id'] . ';');
 $result = $request->fetchAll();
 
 ?>
