@@ -17,14 +17,23 @@ $pdo = new PDO(
 	$pass
 );
 
+<<<<<<< HEAD:messages_liste.php
 $request = $pdo->query('SELECT * FROM messages;');
+=======
+$request = $pdo->query('SELECT * FROM topics;');
+>>>>>>> origin/master:articles_liste.php
 $result = $request->fetchAll();
 
 
 for ( $i = 0; $i < count($result); $i++ ) {
 ?>
 
+<<<<<<< HEAD:messages_liste.php
 <h2><?=$result[$i]['titre']?></h2>
+=======
+<h2><?=$result[$i]['tilre']?></h2>
+<a href="article.php?id=<?=$result[$i]['id']?>">lire</a>
+>>>>>>> origin/master:articles_liste.php
 <br />
 <br />
 
