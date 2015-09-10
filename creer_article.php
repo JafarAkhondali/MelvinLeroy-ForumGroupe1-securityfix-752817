@@ -14,8 +14,3 @@ $pdo = new PDO(
 $pdo->query('INSERT INTO topics(creation, creatorId, title, description) VALUES(NOW(),"' .$_SESSION['user']['id']. '", "' .$_POST['title']. '", "' .$_POST['message']. '");');
 header('Location: topics_liste.php');
 
-
-$pdo->query('INSERT INTO topics(title, description) VALUES("' . $_POST['title'] . '", "' . $_POST['description'] . '");');
-
-header('Location: topics_liste.php');
-

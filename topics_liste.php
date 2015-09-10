@@ -23,6 +23,7 @@ $result = $request->fetchAll();
 //print_r($result);
 
 for ( $i = 0; $i < count($result); $i++ ) {
+	$_SESSION['topic'] = $result[$i]['id'];
 ?>
 
 <h2><?=$result[$i]['title']?>&nbsp;crée le : <?=$result[$i]['creation']?></h2>
