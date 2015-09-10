@@ -23,6 +23,7 @@ h1{
      text-align: center;
      border-radius: 5px ;
      letter-spacing :7px;
+     border: solid 2px #fff;
 }
 .container{
 	width: 800px; 
@@ -33,6 +34,14 @@ h1{
 	margin-left: 200px;
 	margin: 0 auto ;
 	border-radius: 5px ;
+}
+a{  
+	border: solid 2px #fff;
+	border-radius: 5px;
+	color: #fff;
+	margin: 0 auto;
+    background: rgba(255,255,255,0.5);
+
 }
 </style>
 <?php
@@ -67,9 +76,9 @@ if (empty ($_SESSION['user']) ) {
 <p>Email: <?=$result[0]['email']?></p>
 <p>Password: <?=$result[0]['password']?></p>
 <p>Description: <?=$result[0]['description']?></p>
-</div>
+
 <a href="modifierprofil.php">Modifier mes informations</a>
 <a href="deconnexion.php">Log Out</a>
-	
+	</div>
 </body>
 </html>
