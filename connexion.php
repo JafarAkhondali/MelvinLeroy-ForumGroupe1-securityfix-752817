@@ -18,6 +18,7 @@ $request = $pdo->query(
 
 $result = $request->fetchAll();
  
+	if(count($result) > 0){
 	
 	$_SESSION['user'] = $result[0];
 	header('Location: topics_liste.php');

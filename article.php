@@ -15,13 +15,12 @@ $pdo = new PDO(
 	$pass
 );
 
-<<<<<<< HEAD
 $request = $pdo->query('SELECT * FROM messages WHERE id = ' . $_GET['id'] . ';');
 $result = $request->fetch();
-=======
+
 $request = $pdo->query('SELECT * FROM topics WHERE id = ' . $_GET['id'] . ';');
 $result = $request->fetchAll();
->>>>>>> origin/master
+
 
 ?>
 

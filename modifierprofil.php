@@ -29,6 +29,7 @@ $result = $request->fetchAll();
 ?>
 
 <h1>Modifier vos informations</h1>
+<div class="container">
 <form action="modifier-update.php" method="post">
 
 <input type="text" name="pseudo" placeholder="Nouveau Pseudo" value="<?=$result[0]['pseudo']?>" />
@@ -38,6 +39,8 @@ $result = $request->fetchAll();
 <input type="submit" value="Modifier" />
 
 </form>
+</div>
+
 </body>
 </html>
 
