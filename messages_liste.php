@@ -2,14 +2,6 @@
 <head>
 </head>
 <body>
-<style scoped>
-body{
-	font:16px sans-serif;
-}
-h2{
-	background: black;
-}
-</style>
 <?php
 
 session_start();
@@ -25,16 +17,14 @@ $pdo = new PDO(
 	$pass
 );
 
-$request = $pdo->query('SELECT * FROM articles;');
+$request = $pdo->query('SELECT * FROM messages;');
 $result = $request->fetchAll();
 
-//print_r($result);
 
 for ( $i = 0; $i < count($result); $i++ ) {
 ?>
 
 <h2><?=$result[$i]['titre']?></h2>
-<a href="article.php?id=<?=$result[$i]['id']?>">lire</a>
 <br />
 <br />
 

@@ -15,14 +15,14 @@ $pdo = new PDO(
 	$pass
 );
 
-$request = $pdo->query('SELECT * FROM articles WHERE id = ' . $_GET['id'] . ';');
-$result = $request->fetchAll();
+$request = $pdo->query('SELECT * FROM messages WHERE id = ' . $_GET['id'] . ';');
+$result = $request->fetch();
 
 ?>
 
-<h1><?=$result[0]['titre']?></h1>
-<p><?=$result[0]['article']?></p>
-<a href="articles_liste.php">Précédent</a>
+<h1><?=$result[0]['title']?> le <?=$result[0]['creation']?></h1>
+<p><?=$result[0]['messages']?></p>
+<a href="topics_liste.php">Précédent</a>
 
 </body>
 </html>

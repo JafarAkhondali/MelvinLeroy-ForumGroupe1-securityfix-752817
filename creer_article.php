@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 $dsn = 'mysql:host=localhost;dbname=forumgroupe1';
 $user = 'root';
@@ -10,7 +10,5 @@ $pdo = new PDO(
 	$user,
 	$pass
 );
-
-$pdo->query('INSERT INTO articles(titre, article) VALUES("' . $_POST['titre'] . '", "' . $_POST['article'] . '");');
-
-header('Location: articles_liste.php');
+$pdo->query('INSERT INTO topics(creation, creatorId, title, description) VALUES(NOW(),"' .$_SESSION['user']['id']. '", "' .$_POST['title']. '", "' .$_POST['message']. '");');
+header('Location: topics_liste.php');
