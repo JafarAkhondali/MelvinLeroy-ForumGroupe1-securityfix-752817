@@ -89,12 +89,12 @@ if ( !empty($_POST) ) {
                         <li><a href="./">Liste des topics</a></li>
 
              <li><a href="profile.php">Mon profil</a></li>
-                        <li><a href="logout.php">Déconnection</a></li>
+                        <li><a href="logout.php">D&eacute;connection</a></li>
 
                     </ul>
                 </li>
             </ul>
-            <a href="#collapse" id="menucollapse">&#9664; Réduire la sidebar</a>
+            <a href="#collapse" id="menucollapse">&#9664; R&eacute;duire la sidebar</a>
 
         </div>
 
@@ -107,10 +107,10 @@ if ( !empty($_POST) ) {
         <div id="content" class="black">
 
 
-            <h1><img src="img/icons/posts.png" alt="" /> Créer un topic</h1>
+            <h1><img src="img/icons/posts.png" alt="" /> Cr&eacute;er un topic</h1>
             <div class="bloc">
 		<form action="index.php" method="post">
-                <div class="title">Création</div>
+                <div class="title">Cr&eacute;ation</div>
                 <div class="content">
                     <div class="input medium">
                         <label for="input2">Titre du topic</label>

@@ -113,7 +113,7 @@ table{
     display:block;
     margin-left: 30%;
 }
-</style>
+</style>*/
 </html>
 
 
