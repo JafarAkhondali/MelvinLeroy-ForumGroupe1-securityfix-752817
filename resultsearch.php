@@ -20,7 +20,6 @@ if ( empty($_SESSION['user']) ) {
 	<table border="1">
 		<thead>
 			<th>
-				<td>Date de Creation</td>
 				<td>Titre du Topic</td>
 			</th>
 		</thead>
@@ -29,9 +28,8 @@ if ( empty($_SESSION['user']) ) {
 	for ($i=0; $i < count($result) ; $i++) { 
 		?>
 			<tr>
-				<td><a href="<?=$result[$i]['creation']?>"><?=$result[$i]['creation']?></td>
-				<td><a href="<?=$result[$i]['title']?>"><?=$result[$i]['title']?></td>
-				<td><a href="<?=$result[$i]['creatorId']?>"><?=$result[$i]['creatorId']?></td>
+				<td><?=$result[$i]['creation']?></td>
+				<td><a href="topic.php?id=<?=$result[$i]['id']?>"><?=$result[$i]['title']?></a></td>
 			</tr>
 		<?php
 			}
