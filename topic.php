@@ -35,7 +35,7 @@ $result=$request->fetchAll();
 
 			<?php
 
-				$request = $pdo->query('SELECT * FROM messages ORDER BY creation DESC;');
+				$request = $pdo->query('SELECT * FROM messages WHERE topicId = "'.$_GET['id'].'" ORDER BY creation DESC;');
 				$results = $request->fetchAll();
 				foreach ( $results as $result ) {
 
