@@ -10,4 +10,33 @@ if ( empty($_SESSION['user']) ) {
 	$result = $request->fetchAll();
 }
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Résultat de recherche</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<th>
+				<td>Date de Creation</td>
+				<td>Titre du Topic</td>
+			</th>
+		</thead>
+		<tbody>
+		<?php
+	for ($i=0; $i < count($result) ; $i++) { 
+		?>
+			<tr>
+				<td><?=$result[$i]['creation']?></td>
+				<td><?=$result[$i]['title']?></td>
+				<td><?=$result[$i]['creatorId']?></td>
+			</tr>
+		<?php
+			}
+		?>
+		</tbody>
+	</table>
+</body>
+</html>
