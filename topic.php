@@ -14,6 +14,7 @@ $result=$request->fetchAll();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="UTF-8">
 	<title>Liste des Messages du topic</title>
 </head>

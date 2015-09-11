@@ -24,6 +24,8 @@ if ( !empty($_POST) ) {
 ?><!DOCTYPE html>
 <html>
     <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
     <meta charset="UTF-8">
         <title>Your Admin Panel</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -90,8 +92,12 @@ if ( !empty($_POST) ) {
 
              <li><a href="profile.php">Mon profil</a></li>
                         <li><a href="logout.php">D&eacute;connection</a></li>
-
                     </ul>
+                    <form action="resultsearch.php" method="post">
+                        <i class="fa fa-search fa-2x"></i>
+<input class="searchtopic" type="text" placeholder="Rechercher un topic" name="search">
+
+                    </form>
                 </li>
             </ul>
             <a href="#collapse" id="menucollapse">&#9664; R&eacute;duire la sidebar</a>
@@ -193,3 +199,4 @@ if ( !empty($_POST) ) {
 
     </body>
 </html>
+

@@ -25,6 +25,9 @@ body {
 	color: black;
 	background: white;
 }
+.searchtopic{
+	margin: 20px 0 0 5px;
+}
 ol, ul {
 	list-style: none;
 }
@@ -43,6 +46,11 @@ q:before, q:after {
 }
 blockquote, q {
 	quotes: "" "";
+}
+.fa{
+	color: white;
+	margin-left: 25px;
+	vertical-align:-3px;
 }
 
 @font-face{
