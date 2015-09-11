@@ -16,18 +16,26 @@ $pdo = new PDO(
 	$user,
 	$pass
 );
+<<<<<<< HEAD
+// Connexion BDD
+$request = $pdo->query('SELECT * FROM messages;');
+=======
 
 
 $request = $pdo->query('SELECT * FROM messages;');
 
 $request = $pdo->query('SELECT * FROM topics;');
 
+>>>>>>> origin/master
 $result = $request->fetchAll();
-
+// Requete trop simple a comprendre
 
 for ( $i = 0; $i < count($result); $i++ ) {
 ?>
 
+<<<<<<< HEAD
+<h2><?=$result[$i]['titre']?></h2>
+=======
 
 <h2><?=$result[$i]['titre']?></h2>
 
@@ -35,6 +43,7 @@ for ( $i = 0; $i < count($result); $i++ ) {
 
 <a href="article.php?id=<?=$result[$i]['id']?>">lire</a>
 
+>>>>>>> origin/master
 <br />
 <br />
 
@@ -45,19 +54,9 @@ for ( $i = 0; $i < count($result); $i++ ) {
 <div class="container">
 <a href="créearticles.html"> Créer un article &raquo;</a>
 <?php
-
-$dsn = 'mysql:host=localhost;dbname=forumgroupe1';
-$user = 'root';
-$pass = '';
-
-$pdo = new PDO(
-	$dsn,
-	$user,
-	$pass
-);
-
 $request = $pdo->query('SELECT * FROM users;');
 $result = $request->fetchAll();
+//Ici c'est pareil
 
 ?>
 

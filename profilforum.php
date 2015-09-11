@@ -57,10 +57,10 @@ $pdo = new PDO(
 	$user,
 	$pass
 );
-
+// Connexion BDD
 $request = $pdo->query('SELECT * FROM users WHERE id= "' . $_SESSION['user']['id'] . '";');
 $result = $request->fetchAll();
-
+//REquete pour afficher le bon profil
 if (empty ($_SESSION['user']) ) {
 	header('Location: connexion.html');
 	die();

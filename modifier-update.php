@@ -15,7 +15,7 @@ $pdo = new PDO(
 );
 
 $sql = 'UPDATE users SET pseudo = "' . $_POST['pseudo'] . '", email = "' . $_POST['email'] . '", password= "'.$_POST['password'].'", description= "' .$_POST['description']. '" WHERE id= "'.$_SESSION['user']['id'].'"';
-
+//Requete de Modification des données
 $pdo->query($sql);
 
 header('Location: profilforum.php');

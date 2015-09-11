@@ -24,12 +24,13 @@ $pdo = new PDO(
 
 $request = $pdo->query('SELECT * FROM users WHERE id = ' . $_SESSION['user']['id'] . ';');
 $result = $request->fetchAll();
-
+//On Verifie qu'on veut bien modifié le profil du bon User Loggué
 
 ?>
 
 <h1>Modifier vos informations</h1>
 <div class="container">
+<!-- un form de base -->
 <form action="modifier-update.php" method="post">
 
 <input type="text" name="pseudo" placeholder="Nouveau Pseudo" value="<?=$result[0]['pseudo']?>" />
