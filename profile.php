@@ -10,21 +10,20 @@ if ( empty($_SESSION['user']) ) {
 
 if ( !empty($_POST) ) {
 	$pdo->query(
-		'INSERT INTO topics (creation, creatorId, title, description) VALUES (' .
-		'"' . date('Y-m-d H:i:s') . '", "' . $_SESSION['user']['id'] . '", "' . $_POST['title'] . '", "' . $_POST['description'] . '");'
+		'UPDATE users SET email = "' . $_POST['email'] . '", pseudo = "' . $_POST['pseudo'] . '" WHERE id = ' . $_SESSION['user']['id']
 	);
-	header('Location: ./');
+	header('Location: profile.php');
 	die();
 }
 
-
-
+$req = $pdo->query('SELECT * FROM users WHERE id = ' . $_SESSION['user']['id']);
+$result = $req->fetchAll();
+$user = $result[0];
 
 
 ?><!DOCTYPE html>
 <html>
     <head>
-    <meta charset="UTF-8">
         <title>Your Admin Panel</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -87,12 +86,8 @@ if ( !empty($_POST) ) {
                 <li class="current"><a href="#"><img src="img/icons/menu/layout.png" alt="" /> Menu</a>
                     <ul>
                         <li><a href="./">Liste des topics</a></li>
-<<<<<<< HEAD
-                        <li><a href="logout.php">Déconnexion</a></li>
-=======
                         <li><a href="profile.php">Mon profil</a></li>
                         <li><a href="logout.php">Déconnection</a></li>
->>>>>>> origin/master
                     </ul>
                 </li>
             </ul>
@@ -109,23 +104,23 @@ if ( !empty($_POST) ) {
         <div id="content" class="black">
 
 
-            <h1><img src="img/icons/posts.png" alt="" /> Créer un topic</h1>
+            <h1><img src="img/icons/posts.png" alt="" /> Modifier mon profil</h1>
             <div class="bloc">
-		<form action="index.php" method="post">
-                <div class="title">Création</div>
+		<form action="profile.php" method="post">
+                <div class="title">Profil</div>
                 <div class="content">
                     <div class="input medium">
-                        <label for="input2">Titre du topic</label>
-                        <input type="text" id="input2" name="title">
+                        <label for="input2">pseudo</label>
+                        <input type="text" id="input2" name="pseudo" value="<?=$user['pseudo']?>">
+                    </div>
+                    <div class="input medium">
+                        <label for="input2">email</label>
+                        <input type="text" id="input2" name="email" value="<?=$user['email']?>">
                     </div>
 
-                    <div class="input textarea">
-                        <label for="textarea1">Description</label>
-                        <textarea id="textarea1" rows="7" cols="4" name="description"></textarea>
-                    </div>
 
 		    <div class="submit">
-                        <input type="submit" value="Créer">
+                        <input type="submit" value="Enregistrer">
                     </div>
 
                 </div>
@@ -134,59 +129,6 @@ if ( !empty($_POST) ) {
 
 
 
-
-            <h1><img src="img/icons/posts.png" alt="" /> Liste des topics</h1>
-            <div class="bloc">
-                <div class="title">
-                    Liste
-                </div>
-                <div class="content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Creation</th>
-                                <th>Titre</th>
-                                <th>Auteur</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-			<?php
-
-				$request = $pdo->query('SELECT * FROM topics ORDER BY creation DESC;');
-				$results = $request->fetchAll();
-				foreach ( $results as $result ) {
-
-			?>
-
-                            <tr>
-                                <td><?=$result['creation']?></td>
-                                <td><a href="topic.php?id=<?=$result['id']?>">Topic <?=$result['id']?> : <?=$result['title']?></a></td>
-                                <td><?php
-
-
-					$request = $pdo->query('SELECT * FROM users WHERE id = ' . $result['creatorId']);
-					$resultB = $request->fetchAll();
-					echo $resultB[0]['pseudo'];
-
-
-				?></td>
-                                <td><?=$result['description']?></td>
-                            </tr>
-
-			<?php
-
-				}
-
-			?>
-
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
 
 
 
