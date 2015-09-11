@@ -29,9 +29,9 @@ if ( empty($_SESSION['user']) ) {
 	for ($i=0; $i < count($result) ; $i++) { 
 		?>
 			<tr>
-				<td><?=$result[$i]['creation']?></td>
-				<td><?=$result[$i]['title']?></td>
-				<td><?=$result[$i]['creatorId']?></td>
+				<td><a href="<?=$result[$i]['creation']?>"><?=$result[$i]['creation']?></td>
+				<td><a href="<?=$result[$i]['title']?>"><?=$result[$i]['title']?></td>
+				<td><a href="<?=$result[$i]['creatorId']?>"><?=$result[$i]['creatorId']?></td>
 			</tr>
 		<?php
 			}
