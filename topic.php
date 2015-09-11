@@ -23,7 +23,7 @@ $result=$request->fetchAll();
                 <div class="title">
                 </div>
                 <div class="content">
-                    <table>
+                    <table border="1">
                         <thead>
                             <tr>
                                 <th>Creation</th>
