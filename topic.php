@@ -70,6 +70,7 @@ $result=$request->fetchAll();
             <form action="formpostmessage.php?id=<?=$_GET['id']?>" method="post">
             <input type="submit" value="Envoyer un message">
             </form>
+            <br />
             <form action="index.php" method="post">
             <input type="submit" value="Retour au Topic">
             </form>

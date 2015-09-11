@@ -87,12 +87,10 @@ if ( !empty($_POST) ) {
                 <li class="current"><a href="#"><img src="img/icons/menu/layout.png" alt="" /> Menu</a>
                     <ul>
                         <li><a href="./">Liste des topics</a></li>
-<<<<<<< HEAD
-                        <li><a href="logout.php">Déconnexion</a></li>
-=======
-                        <li><a href="profile.php">Mon profil</a></li>
+
+             <li><a href="profile.php">Mon profil</a></li>
                         <li><a href="logout.php">Déconnection</a></li>
->>>>>>> origin/master
+
                     </ul>
                 </li>
             </ul>
