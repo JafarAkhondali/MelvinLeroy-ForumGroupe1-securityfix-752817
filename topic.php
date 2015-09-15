@@ -19,20 +19,42 @@ $result=$request->fetchAll();
 	<title>Liste des Messages du topic</title>
 </head>
 <body>
+<style scoped>
+body{
+    font:16px sans-serif;
+    background: url(img/1440.jpg)scroll no-repeat 0 0;
+}
+h1{
+    text-align: center;
+    border-radius:5px;
+    background: #8D6E63;
+    color:#fff;
+    opacity:0.7;
+}
+ul{
+
+}
+.send{
+    border-radius:5px;
+    background:#8D6E63;
+    margin:0 auto;
+    display:block;
+    margin-left: 30%;
+}
+.back{
+    border-radius:5px;
+    background: #8D6E63;
+    margin:0 auto;
+    display:block;
+    margin-left: 30%;
+}
+</style>
 	 <h1><img src="img/icons/posts.png" alt="" /> Messages sur Le topic</h1>
             <div class="bloc">
                 <div class="title">
                 </div>
                 <div class="content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Creation</th>
-                                <th>Auteur</th>
-                                <th>Message</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                        
 
 			<?php
 
@@ -42,9 +64,9 @@ $result=$request->fetchAll();
 
 			?>
 
-                            <tr>
-                                <td><?=$result['creation']?></td>
-                                <td><?php
+                            <ul>
+                                <li><?=$result['creation']?></li>
+                                <li><?php
 
 
 					$request = $pdo->query('SELECT * FROM users WHERE id = "' .$_SESSION['user']['id'].'"');
@@ -52,11 +74,11 @@ $result=$request->fetchAll();
 					echo $_SESSION['user']['pseudo'];
 
 
-				?></td>
-                                <td><?=$result['message']?></td>
-                            </tr>
+				?></li>
+                                <li><?=$result['message']?></li>
+                            </ul>
 
-			<?php
+			<?
 
 				}
 
@@ -64,15 +86,13 @@ $result=$request->fetchAll();
 
 
 
-                        </tbody>
-                    </table>
                 </div>
             </div>
             <form action="formpostmessage.php?id=<?=$_GET['id']?>" method="post">
-            <input type="submit" value="Envoyer un message">
+            <input type="submit" class="send" value="Envoyer un message">
             </form>
             <form action="index.php" method="post">
-            <input type="submit" value="Retour au Topic">
+            <input type="submit" class="back" value="Retour au Topic">
             </form>
 </body>
 </html>
