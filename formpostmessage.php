@@ -21,4 +21,7 @@ if ( empty($_SESSION['user']) ) {
 	<input type="submit" value="Envoyer le message">
 	</form>
 </body>
+<style scoped>
+
+</style>
 </html>
