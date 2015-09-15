@@ -15,6 +15,7 @@ $result=$request->fetchAll();
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/topic.css">
 	<title>Liste des Messages du topic</title>
 </head>
 <body>
@@ -35,7 +36,7 @@ $result=$request->fetchAll();
 
 			<?php
 
-				$request = $pdo->query('SELECT * FROM messages ORDER BY creation DESC;');
+				$request = $pdo->query('SELECT * FROM messages WHERE topicId= "' . $_GET['id'] . '" ORDER BY creation DESC;');
 				$results = $request->fetchAll();
 				foreach ( $results as $result ) {
 

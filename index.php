@@ -90,27 +90,27 @@ if ( !empty($_POST) ) {
                     <ul>
                         <li><a href="./">Liste des topics</a></li>
 
-                        <li><a href="logout.php">Déconnexion</a></li>
+                        <li><a href="logout.php">D&eacute;connexion</a></li>
 
                         <li><a href="profile.php">Mon profil</a></li>
-                        <li><a href="logout.php">Déconnection</a></li>
+                        <li><a href="logout.php">D&eacute;connection</a></li>
 
                     </ul>
                 </li>
             </ul>
-            <a href="#collapse" id="menucollapse">&#9664; Réduire la sidebar</a>
-            <form action="resultsearch.php" method="post">
-                <input type="text" name="search">
+            <a href="#collapse" id="menucollapse">&#9664; R&eacute;duire la sidebar</a>
+            <form action="resultsearch.php" method="post"  class="search">
+                <input type="text" name="search" placeholder="Rechercher">
             </form>
         </div>
 
         <div id="content" class="black">
 
 
-            <h1><img src="img/icons/posts.png" alt="" /> Créer un topic</h1>
+            <h1><img src="img/icons/posts.png" alt="" /> Cr&eacute;er un topic</h1>
             <div class="bloc">
 		<form action="index.php" method="post">
-                <div class="title">Création</div>
+                <div class="title">Cr&eacute;ation</div>
                 <div class="content">
                     <div class="input medium">
                         <label for="input2">Titre du topic</label>
@@ -123,7 +123,7 @@ if ( !empty($_POST) ) {
                     </div>
 
 		    <div class="submit">
-                        <input type="submit" value="Créer">
+                        <input type="submit" value="Cr&eacute;er">
                     </div>
 
                 </div>
