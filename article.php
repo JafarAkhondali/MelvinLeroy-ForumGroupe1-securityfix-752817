@@ -16,7 +16,6 @@ $pdo = new PDO(
 	$pass
 );
 
-<<<<<<< HEAD
 
 
 $requestA = $pdo->query('SELECT * FROM messages WHERE id = ' . $_GET['id'] . ';');
@@ -31,18 +30,15 @@ $result = $request->fetch();
 $request = $pdo->query('SELECT * FROM topics WHERE id = ' . $_GET['id'] . ';');
 $result = $request->fetchAll();
 
-
-
-=======
 $requestB = $pdo->query('SELECT * FROM topics WHERE id = ' . $_GET['id'] . ';');
 $resultB = $requestB->fetch();
->>>>>>> origin/master
+
 ?>
 
 <h1><?=$resultB[0]['title']?> le <?=$resultB[0]['creation']?></h1>
 
 <a href="topics_liste.php">Précédent</a>
-<<<<<<< HEAD
+
 <a href="postmessage.html">Créer un message</a>
 <style scoped>
 body{
@@ -70,9 +66,9 @@ body{
 	}
 
 </style>
-=======
+
 <a href="formpostmessage.php?id=<?=$_GET['id']?>">Créer un message</a>
->>>>>>> origin/master
+
 
 </body>
 </html>
