@@ -14,7 +14,6 @@ $result=$request->fetchAll();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/style.css">
 	<meta charset="UTF-8">
 	<title>Liste des Messages du topic</title>
 </head>
@@ -24,7 +23,7 @@ $result=$request->fetchAll();
                 <div class="title">
                 </div>
                 <div class="content">
-                    <table border="1">
+                    <table>
                         <thead>
                             <tr>
                                 <th>Creation</th>
@@ -36,7 +35,7 @@ $result=$request->fetchAll();
 
 			<?php
 
-				$request = $pdo->query('SELECT * FROM messages WHERE topicId = "'.$_GET['id'].'" ORDER BY creation DESC;');
+				$request = $pdo->query('SELECT * FROM messages ORDER BY creation DESC;');
 				$results = $request->fetchAll();
 				foreach ( $results as $result ) {
 
@@ -69,14 +68,12 @@ $result=$request->fetchAll();
                 </div>
             </div>
             <form action="formpostmessage.php?id=<?=$_GET['id']?>" method="post">
-            <input type="submit" class="send" value="Envoyer un message">
+            <input type="submit" value="Envoyer un message">
             </form>
-            <br />
             <form action="index.php" method="post">
-            <input type="submit" class="back" value="Retour au Topic">
+            <input type="submit" value="Retour au Topic">
             </form>
 </body>
-
 </html>
 
 

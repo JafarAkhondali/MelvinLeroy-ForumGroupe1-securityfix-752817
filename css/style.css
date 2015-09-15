@@ -25,17 +25,6 @@ body {
 	color: black;
 	background: white;
 }
-a{
-	text-decoration: none;
-	color:black;
-}
-a:hover{
-	text-decoration: underline;
-	color: blue;
-}
-.searchtopic{
-	margin: 20px 0 0 5px;
-}
 ol, ul {
 	list-style: none;
 }
@@ -54,11 +43,6 @@ q:before, q:after {
 }
 blockquote, q {
 	quotes: "" "";
-}
-.fa{
-	color: white;
-	margin-left: 25px;
-	vertical-align:-3px;
 }
 
 @font-face{
@@ -110,13 +94,11 @@ body{
 	right: 15px;
 }
 #head a{
-	color: black;
+	color: #FFFFFF;
 	text-decoration: none;
-	transition-duration:0.8s;
 }
 #head a:hover{
 	text-decoration: underline;
-	color: blue;
 }
 #head a.button{
 	border: 1px solid #222222;
