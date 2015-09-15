@@ -65,7 +65,7 @@ ul{
 			?>
 
                             <ul>
-                                <li><?=$result['creation']?></li>
+                                <li><?=$result['creation']?><?=$result['message']?></li>
                                 <li><?php
 
 
@@ -78,7 +78,7 @@ ul{
                                 <li><?=$result['message']?></li>
                             </ul>
 
-			<?
+			<?php
 
 				}
 
@@ -86,6 +86,8 @@ ul{
 
 
 
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <form action="formpostmessage.php?id=<?=$_GET['id']?>" method="post">
