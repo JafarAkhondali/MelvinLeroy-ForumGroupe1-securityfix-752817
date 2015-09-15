@@ -22,10 +22,15 @@ if ( !empty($_POST) ) {
 
 
 ?><!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+=======
 <html>
     <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+>>>>>>> origin/master
     <meta charset="UTF-8">
         <title>Your Admin Panel</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -79,44 +84,33 @@ if ( !empty($_POST) ) {
                 <?=$_SESSION['user']['pseudo']?>
             </div>
         </div>
-
-
-        <!--
-                SIDEBAR
-                         -->
         <div id="sidebar" class="black">
             <ul>
                 <li class="current"><a href="#"><img src="img/icons/menu/layout.png" alt="" /> Menu</a>
                     <ul>
                         <li><a href="./">Liste des topics</a></li>
 
-             <li><a href="profile.php">Mon profil</a></li>
-                        <li><a href="logout.php">D&eacute;connection</a></li>
-                    </ul>
-                    <form action="resultsearch.php" method="post">
-                        <i class="fa fa-search fa-2x"></i>
-<input class="searchtopic" type="text" placeholder="Rechercher un topic" name="search">
+                        <li><a href="logout.php">Déconnexion</a></li>
 
-                    </form>
+                        <li><a href="profile.php">Mon profil</a></li>
+                        <li><a href="logout.php">Déconnection</a></li>
+
+                    </ul>
                 </li>
             </ul>
-            <a href="#collapse" id="menucollapse">&#9664; R&eacute;duire la sidebar</a>
-
+            <a href="#collapse" id="menucollapse">&#9664; Réduire la sidebar</a>
+            <form action="resultsearch.php" method="post">
+                <input type="text" name="search">
+            </form>
         </div>
 
-
-
-
-        <!--
-              CONTENT
-                        -->
         <div id="content" class="black">
 
 
-            <h1><img src="img/icons/posts.png" alt="" /> Cr&eacute;er un topic</h1>
+            <h1><img src="img/icons/posts.png" alt="" /> Créer un topic</h1>
             <div class="bloc">
 		<form action="index.php" method="post">
-                <div class="title">Cr&eacute;ation</div>
+                <div class="title">Création</div>
                 <div class="content">
                     <div class="input medium">
                         <label for="input2">Titre du topic</label>
@@ -170,7 +164,7 @@ if ( !empty($_POST) ) {
                                 <td><?php
 
 
-					$request = $pdo->query('SELECT * FROM users WHERE id = "' . $result['creatorId'] . '"');
+					$request = $pdo->query('SELECT * FROM users WHERE id = ' . $result['creatorId']);
 					$resultB = $request->fetchAll();
 					echo $resultB[0]['pseudo'];
 
@@ -199,4 +193,3 @@ if ( !empty($_POST) ) {
 
     </body>
 </html>
-
