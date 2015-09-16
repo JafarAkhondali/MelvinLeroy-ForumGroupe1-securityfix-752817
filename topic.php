@@ -31,8 +31,17 @@ h1{
     color:#fff;
     opacity:0.7;
 }
+.content{
+    border-radius:5px;
+    border:solid 1px #ccc;
+    box-shadow:0.5;
+}
 ul{
-
+    text-align: center;
+    list-style: none;
+}
+li{
+    color:#fff;
 }
 .send{
     border-radius:5px;
@@ -62,20 +71,21 @@ ul{
 				$results = $request->fetchAll();
 				foreach ( $results as $result ) {
 
+                $request = $pdo->query('SELECT * FROM users WHERE id = "' .$_SESSION['user']['id'].'"');
+                $resultB = $request->fetchAll();
+                echo $_SESSION['user']['pseudo'];
 			?>
 
                             <ul>
-                                <li><?=$result['creation']?><?=$result['message']?></li>
+                                <li><?=$result['creation']?>&nbsp;<?=$result['message']?></li>
                                 <li><?php
 
 
-					$request = $pdo->query('SELECT * FROM users WHERE id = "' .$_SESSION['user']['id'].'"');
-					$resultB = $request->fetchAll();
-					echo $_SESSION['user']['pseudo'];
+					
 
 
 				?></li>
-                                <li><?=$result['message']?></li>
+                                
                             </ul>
 
 			<?php
@@ -85,9 +95,6 @@ ul{
 			?>
 
 
-
-                        </tbody>
-                    </table>
                 </div>
             </div>
             <form action="formpostmessage.php?id=<?=$_GET['id']?>" method="post">
