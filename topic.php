@@ -65,29 +65,6 @@ ul{
     border-bottom-right-radius: 8px;
     background: #616161;
     opacity: 0.8;
-
-=======
-    width:190px;
-    line-height:30px;
-    text-align: center;
-    color:#fff;
-    border-radius:4px;
-    background: #8d6e63;
-    margin:10px auto;
-    display:block;
-}
-.msglist{
-    border:solid 1px #FFB74D;
-    border-radius:5px;
-    color:#EEFF41;
-    width:350px;
-    margin:0 auto;
-    border:solid 1px #ffb74d;
-    color:#fff;
-    margin-top: 0 ;
-    border-bottom-left-radius: 8px; 
-    border-bottom-right-radius: 8px;
->>>>>>> origin/master
 }
 .date{
     border:solid 1px #212121;
