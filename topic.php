@@ -40,7 +40,6 @@ ul{
     border-radius:5px;
     background:#535353;
     margin:0 auto;
-<<<<<<< HEAD
     width:190px;
     line-height: 30px;
     text-align: center;
@@ -48,20 +47,14 @@ ul{
     border-radius:4px;
     background: #8d6e63;
     margin:10px auto;
-=======
     color: #fff;
     border: solid 1px  #212121;
->>>>>>> origin/master
     display:block;
     opacity: 0.8;
     height: 35px;
     transition-duration:0.5s;
 }
 .back{
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
     border-radius:5px;
     background: #535353;
     margin:0 auto;
@@ -81,12 +74,8 @@ ul{
     border-bottom-right-radius: 8px;
     background: #616161;
     opacity: 0.8;
-<<<<<<< HEAD
-=======
     padding-left: 0;
->>>>>>> origin/master
 }
-
 .date{
     border:solid 1px #212121;
     background: #212121;

@@ -19,7 +19,7 @@ if ( empty($_SESSION['user']) ) {
 <style scoped>
 body{
 	font:16px sans-serif;
-	background: url(img/post-it-humour.jpg)scroll no-repeat 0 0;
+	background: url(img/78863411_o.jpg)scroll no-repeat 0 0;
 }
 textarea{
 	margin:0 auto;
@@ -41,7 +41,4 @@ textarea{
 	</form>
 	</div>
 </body>
-<style scoped>
-
-</style>
 </html>
