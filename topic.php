@@ -29,7 +29,16 @@ h1{
     border-radius:5px;
     background: #8D6E63;
     color:#fff;
+<<<<<<< HEAD
+    opacity:0.8;
+-moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+
+=======
     opacity:0.7;
+>>>>>>> origin/master
 }
 ul{
 
@@ -38,16 +47,93 @@ ul{
     border-radius:5px;
     background:#8D6E63;
     margin:0 auto;
+<<<<<<< HEAD
+    width:190px;
+    line-height: 30px;
+    text-align: center;
+    color:#fff;
+    border-radius:4px;
+    background: #8d6e63;
+    margin:10px auto;
+    color: #fff;
+    border: solid 1px  #212121;
+=======
+>>>>>>> origin/master
     display:block;
+<<<<<<< HEAD
+    opacity: 0.8;
+    height: 35px;
+     -moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+
+=======
     margin-left: 30%;
+>>>>>>> origin/master
 }
 .back{
     border-radius:5px;
     background: #8D6E63;
     margin:0 auto;
     display:block;
-    margin-left: 30%;
+<<<<<<< HEAD
+    border: solid 1px  #212121;
+    color: #fff ;
+    opacity: 0.8;
+    margin-top: 16px;
+    height: 35px;
+      -moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+
 }
+.msglist{
+    border:solid 1px #212121;
+    color:#fff;
+    margin-top: 0 ;
+    border-bottom-left-radius: 8px; 
+    border-bottom-right-radius: 8px;
+    background: #616161;
+    opacity: 0.8;
+    padding-left: 0;
+    -moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+}
+.date{
+    border:solid 1px #212121;
+    background: #212121;
+    color: #ccc;
+    height: 30px;
+    padding-top: 10px;
+    margin-bottom: 0 ;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    opacity: 0.8;
+    padding-left: 0;
+=======
+    margin-left: 30%;
+>>>>>>> origin/master
+}
+<<<<<<< HEAD
+.content{
+    width: 850px;
+    margin: 0 auto;
+
+}
+.julientesrelou{
+    text-align: center;
+    padding-left: 10px;
+    margin: 0 auto;
+    display: inline;
+
+}
+
+=======
+>>>>>>> origin/master
 </style>
 	 <h1><img src="img/icons/posts.png" alt="" /> Messages sur Le topic</h1>
             <div class="bloc">
