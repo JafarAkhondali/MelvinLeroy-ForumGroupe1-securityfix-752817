@@ -36,23 +36,31 @@ ul{
     list-style: none;
 }
 .send{
-    border-radius:5px;
-    background:#8D6E63;
-    margin:0 auto;
+    width:190px;
+    line-height: 30px;
+    text-align: center;
+    color:#fff;
+    border-radius:4px;
+    background: #8d6e63;
+    margin:10px auto;
     display:block;
-    margin-left: 30%;
 }
 .back{
-    border-radius:5px;
-    background: #8D6E63;
-    margin:0 auto;
+    width:190px;
+    line-height:30px;
+    text-align: center;
+    color:#fff;
+    border-radius:4px;
+    background: #8d6e63;
+    margin:10px auto;
     display:block;
-    margin-left: 30%;
 }
 .msglist{
-    border:solid 1px #ccc;
+    border:solid 1px #FFB74D;
     border-radius:5px;
-    color:#fff;
+    color:#EEFF41;
+    width:350px;
+    margin:0 auto;
 }
 </style>
 	 <h1><img src="img/icons/posts.png" alt="" /> Messages sur Le topic</h1>
@@ -77,7 +85,7 @@ ul{
                 </ul>    
                             <ul class="msglist">
 
-                                <li><?=$_SESSION['user']['pseudo']?> :</li>
+                                <li><?=$_SESSION['user']['pseudo']?> a écrit :</li>
                                 <li><?=$result['message']?></li>
                             
                             </ul>
