@@ -28,7 +28,7 @@ h1{
     text-align: center;
     border-radius:5px;
     background: #212121;
-    color:#ccc;
+    color:#fff;
     opacity:0.8;
 }
 ul{
@@ -36,62 +36,41 @@ ul{
     list-style: none;
 }
 .send{
-<<<<<<< HEAD
+
     border-radius:5px;
     background:#535353;
     margin:0 auto;
-=======
-    width:190px;
-    line-height: 30px;
-    text-align: center;
-    color:#fff;
-    border-radius:4px;
-    background: #8d6e63;
-    margin:10px auto;
->>>>>>> origin/master
+    color: #fff;
+    border: solid 1px  #212121;
     display:block;
+    opacity: 0.8;
+    height: 35px;
+    transition-duration:0.5s;
 }
 .back{
-<<<<<<< HEAD
+
     border-radius:5px;
     background: #535353;
     margin:0 auto;
     display:block;
-    margin-left: 30%;
-    border: solid;
+    border: solid 1px  #212121;
+    color: #fff ;
+    opacity: 0.8;
+    margin-top: 16px;
+    height: 35px;
+    transition-duration:0.5s;
 }
 .msglist{
     border:solid 1px #212121;
-    color:#ccc;
+    color:#fff;
     margin-top: 0 ;
     border-bottom-left-radius: 8px; 
     border-bottom-right-radius: 8px;
     background: #616161;
     opacity: 0.8;
+    padding-left: 0;
+}
 
-=======
-    width:190px;
-    line-height:30px;
-    text-align: center;
-    color:#fff;
-    border-radius:4px;
-    background: #8d6e63;
-    margin:10px auto;
-    display:block;
-}
-.msglist{
-    border:solid 1px #FFB74D;
-    border-radius:5px;
-    color:#EEFF41;
-    width:350px;
-    margin:0 auto;
-    border:solid 1px #ffb74d;
-    color:#fff;
-    margin-top: 0 ;
-    border-bottom-left-radius: 8px; 
-    border-bottom-right-radius: 8px;
->>>>>>> origin/master
-}
 .date{
     border:solid 1px #212121;
     background: #212121;
@@ -102,13 +81,17 @@ ul{
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     opacity: 0.8;
+    padding-left: 0;
 }
 .content{
     width: 850px;
-    margin: 0 auto ;
+    margin: 0 auto;
 }
-
-.popo{
+.julientesrelou{
+    text-align: center;
+    padding-left: 10px;
+    margin: 0 auto;
+    display: inline;
 
 }
 
@@ -138,7 +121,7 @@ ul{
                             <div class="popo">
 
                                 <li><?=$_SESSION['user']['pseudo']?> a écrit :</li>
-                                <li><?=$result['message']?></li>
+                                <li class="julientesrelou"><?=nl2br($result['message'], false)?></li>
                             </div>
                             </ul>
 
