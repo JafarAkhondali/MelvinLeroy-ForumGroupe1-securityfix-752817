@@ -30,6 +30,11 @@ h1{
     background: #212121;
     color:#fff;
     opacity:0.8;
+-moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+
 }
 ul{
     text-align: center;
@@ -45,7 +50,11 @@ ul{
     display:block;
     opacity: 0.8;
     height: 35px;
-    transition-duration:0.5s;
+     -moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+
 }
 .back{
 
@@ -58,7 +67,11 @@ ul{
     opacity: 0.8;
     margin-top: 16px;
     height: 35px;
-    transition-duration:0.5s;
+      -moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+
 }
 .msglist{
     border:solid 1px #212121;
@@ -69,6 +82,10 @@ ul{
     background: #616161;
     opacity: 0.8;
     padding-left: 0;
+    -moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
 }
 
 .date{
@@ -86,6 +103,7 @@ ul{
 .content{
     width: 850px;
     margin: 0 auto;
+
 }
 .julientesrelou{
     text-align: center;
