@@ -18,7 +18,12 @@ if ( !empty($_POST) ) {
 }
 
 
+$sql = 'UPDATE users SET action = '.time().' WHERE id = '.intval($_SESSION['id']);
+$query = $pdo->query($sql);
 
+$limit= time() - (60 * 5);
+
+$sql2 = 'UPDATE users WHERE action < '.$limit;
 
 
 ?><!DOCTYPE html>
