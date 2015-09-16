@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Inscription</title>
+	<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+
+	<style type="text/css">
+body{
+	    font: 16px 'Oxygen' , sans-serif ;
+		margin:0;
+		background: url(image/new-wallpaper-14.jpg)scroll no-repeat 0 0;
+}
+.container{  
+	width: 800px; 
+	height: 150px;
+	border: solid 2px #e0e0e0;
+    background: rgba(255,255,255,0.5);
+	color: #fff;
+	margin-left: 200px;
+	margin: 0 auto ;
+	border-radius: 5px ;
+}
+h1{
+
+	 line-height:45px;
+     width:800px;
+     top: 100;
+     margin: 0 auto ;
+     background: rgba(255,255,255,0.5);
+     box-shadow:0 2px 2px #999;
+     color: #fff;
+     text-align: center;
+     border-radius: 5px ;
+     letter-spacing :7px;
+     border: solid 2px #fff;
+
+}
+form{
+	text-align: center;
+    margin-top: 30px;
+
+}
+
+
+
+
+</style>
+</head>
+<body>
+<h1>Créer un message</h1>
+<div class="container">
+	<form action="inscription.php" method="post">
+	<input type="text" placeholder="Pseudonyme" name="pseudo">
+	<input type="mail" placeholder="Adresse Email" name="email"><br>
+	<input type="password" placeholder="Password" name="password"><br>
+	<input type="submit" value="Inscription">
+	</form>
+	</div>
+
+</body>
+</html>
