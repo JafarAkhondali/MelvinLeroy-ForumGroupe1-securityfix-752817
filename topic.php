@@ -27,9 +27,9 @@ body{
 h1{
     text-align: center;
     border-radius:5px;
-    background: #8D6E63;
-    color:#fff;
-    opacity:0.7;
+    background: #ffb74d;
+    color:#8D6E63;
+    opacity:0.8;
 }
 ul{
     text-align: center;
@@ -61,7 +61,32 @@ ul{
     color:#EEFF41;
     width:350px;
     margin:0 auto;
+    border:solid 1px #ffb74d;
+    color:#fff;
+    margin-top: 0 ;
+    border-bottom-left-radius: 8px; 
+    border-bottom-right-radius: 8px;
 }
+.date{
+    border:solid 1px #ffb74d;
+    background: #ffb74d;
+    color: #8D6E63;
+    height: 30px;
+    padding-top: 10px;
+    margin-bottom: 0 ;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    opacity: 0.8;
+}
+.content{
+    width: 850px;
+    margin: 0 auto ;
+}
+
+.popo{
+
+}
+
 </style>
 	 <h1><img src="img/icons/posts.png" alt="" /> Messages sur Le topic</h1>
             <div class="bloc">
@@ -83,11 +108,13 @@ ul{
                 <ul class="date">
                     <li><?=$result['creation']?></li>
                 </ul>    
+
                             <ul class="msglist">
+                            <div class="popo">
 
                                 <li><?=$_SESSION['user']['pseudo']?> a écrit :</li>
                                 <li><?=$result['message']?></li>
-                            
+                            </div>
                             </ul>
 
 			<?php
