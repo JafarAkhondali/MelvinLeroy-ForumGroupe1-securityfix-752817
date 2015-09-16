@@ -10,7 +10,7 @@ if ( empty($_SESSION['user']) ) {
 
 if ( !empty($_POST) ) {
 	$pdo->query(
-		'UPDATE users SET email = "' . $_POST['email'] . '", pseudo = "' . $_POST['pseudo'] . '" WHERE id = ' . $_SESSION['user']['id']
+		'UPDATE users SET email = "' . $_POST['email'] . '", pseudo = "' . $_POST['pseudo'] . '", age = "' . $_POST['age'] . '", sexe = "' . $_POST['sexe'] . '", description = "' . $_POST['description'] . '" WHERE id = ' . $_SESSION['user']['id']
 	);
 	header('Location: profile.php');
 	die();
@@ -24,11 +24,14 @@ $user = $result[0];
 ?><!DOCTYPE html>
 <html>
     <head>
-        <title>Your Admin Panel</title>
+
+        <title>Profil de <?=$_SESSION['user']['pseudo']?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
         <!-- Main stylesheed  (EDIT THIS ONE) -->
         <link rel="stylesheet" href="css/style.css" />
+
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" href="js/jwysiwyg/jquery.wysiwyg.old-school.css" />
 
@@ -87,12 +90,32 @@ $user = $result[0];
                     <ul>
                         <li><a href="./">Liste des topics</a></li>
                         <li><a href="profile.php">Mon profil</a></li>
-                        <li><a href="logout.php">Déconnection</a></li>
+                        <li><a href="logout.php">D&eacute;connexion</a></li>
                     </ul>
                 </li>
-            </ul>
-            <a href="#collapse" id="menucollapse">&#9664; Réduire la sidebar</a>
 
+            </ul>
+
+            <a href="#collapse" id="menucollapse">&#9664; R&eacute;duire la sidebar</a>
+            <form action="resultsearch.php" method="post"  class="search">
+                <input type="text" name="search" placeholder="Rechercher">
+            </form>
+             <?php
+            $request = $pdo->query('SELECT * FROM users ORDER BY pseudo ASC;');
+            $results = $request->fetchAll();
+            $countD=count($results);
+            ?>
+            <ul>
+            <h2>
+            <div class="listemembre">
+            <?php
+            for ($i=0; $i < $countD; $i++) { 
+                ?>
+                <li><i class="fa fa-eye"></i><a href="profilmembre.php?id=<?=$results[$i]['id']?>"><?=$results[$i]['pseudo']?></a></li>
+                <?php
+            }
+            ?>
+            </div>
         </div>
 
 
@@ -101,20 +124,31 @@ $user = $result[0];
         <!--
               CONTENT
                         -->
+        <div id="content" class="black">
         <div class="bloc">
-        <form action="profile.php" method="post">
-                <div class="title">Profil</div>
-                <div class="content">
-                    <div class="input medium">
-                        <label for="input2">pseudo</label>
-                        <input type="text" id="input2" name="pseudo" value="<?=$user['pseudo']?>">
-                    </div>
-                    <div class="input medium">
-                        <label for="input2">email</label>
-                        <input type="text" id="input2" name="email" value="<?=$user['email']?>">
-                    </div>
-                </div>
-            </form>
+        <ul>
+        <div class="title">Profil</div>
+        <div class="content">
+         <div class="input medium">
+            <li class="input3 ">Pseudo</li>
+            <li><?=$_SESSION['user']['pseudo']?></li>
+        </div>
+        <div class="input medium">
+            <li class="input3">Age</li>
+            <li><?=$_SESSION['user']['age']?> ans</li>
+        </div>
+        <div class="input medium">
+            <li class="input3">Sexe</li>
+            <li><?=$_SESSION['user']['sexe']?></li>
+        </div>
+        <div class="input medium">
+            <li class="input3">Description</li>
+            <li><?=$_SESSION['user']['description']?></li>
+        </div>
+
+        </ul>
+        </div>
+        </div>
         <div id="content" class="black">
 
 
@@ -124,12 +158,28 @@ $user = $result[0];
                 <div class="title">Profil</div>
                 <div class="content">
                     <div class="input medium">
-                        <label for="input2">pseudo</label>
+                        <label for="input2">Pseudo</label>
                         <input type="text" id="input2" name="pseudo" value="<?=$user['pseudo']?>">
                     </div>
                     <div class="input medium">
-                        <label for="input2">email</label>
+                        <label for="input2">Email</label>
                         <input type="text" id="input2" name="email" value="<?=$user['email']?>">
+                    </div>
+                    <div class="input medium">
+                    <label for="input2">Sexe</label>
+                    <select name="sexe" id="menu" onchange="liste(f)">
+                        <option value="0">Votre sexe</option>
+                        <option value="Homme" name="sexe">Homme</option>
+                        <option value="Femme" name="sexe">Femme</option>
+                    </select>
+                    </div>
+                     <div class="input medium">
+                        <label for="input2">Age</label>
+                        <input type="text" id="input2" name="age" value="<?=$user['age']?>">
+                    </div>
+                     <div class="input medium">
+                        <label for="input2">Description</label>
+                         <textarea id="input2" name="description"><?=$user['description']?></textarea>
                     </div>
 
 

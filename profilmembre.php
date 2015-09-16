@@ -7,36 +7,33 @@ if ( empty($_SESSION['user']) ) {
 	die();
 }
 
+  $request = $pdo->query('SELECT * FROM users WHERE id= "' . $_GET['id'] . '";');
+  $results = $request->fetchAll();
+  $requestT=$pdo->query('SELECT * FROM topics WHERE creatorId= "' . $_GET['id'] . '";');
+  $resultT=$requestT->fetchAll();
+  $countT=count($resultT);
+?>
 
-if ( !empty($_POST) ) {
-	$pdo->query(
-		'INSERT INTO topics (creation, creatorId, title, description) VALUES (' .
-		'"' . date('Y-m-d H:i:s') . '", "' . $_SESSION['user']['id'] . '", "' . $_POST['title'] . '", "' . $_POST['description'] . '");'
-	);
-	header('Location: ./');
-	die();
-}
-
-
-
-
-
-?><!DOCTYPE html>
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="FR-fr">
 <head>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<html>
-    <head>
-    <meta charset="UTF-8">
-        <title>Your Admin Panel</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta charset="UTF-8">
+	<title>Profil de <?=$results[0]['pseudo']?></title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!--[if IE]>
+   <script type="text/javascript" src="js/modernizr.custom.53495.js">
+   </script>
+<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
         <!-- Main stylesheed  (EDIT THIS ONE) -->
         <link rel="stylesheet" href="css/style.css" />
 
         <link rel="stylesheet" href="js/jwysiwyg/jquery.wysiwyg.old-school.css" />
+
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
         <!-- jQuery AND jQueryUI -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
@@ -69,13 +66,9 @@ if ( !empty($_POST) ) {
 
         <!-- Main Javascript that do the magic part (EDIT THIS ONE) -->
         <script type="text/javascript" src="js/main.js"></script>
-    </head>
-    <body class="wood dark">
-
-        <!--
-                HEAD
-                        -->
-        <div id="head">
+</head>
+<body class="wood dark">
+	 <div id="head">
             <div class="left">
                 <a href="#" class="button profile"><img src="img/icons/top/huser.png" alt="" /></a>
                 Bonjour
@@ -87,15 +80,13 @@ if ( !empty($_POST) ) {
                 <li class="current"><a href="#"><img src="img/icons/menu/layout.png" alt="" /> Menu</a>
                     <ul>
                         <li><a href="./">Liste des topics</a></li>
-
                         <li><a href="profile.php">Mon profil</a></li>
-
                         <li><a href="logout.php">D&eacute;connexion</a></li>
                     </ul>
                 </li>
             </ul>
             <a href="#collapse" id="menucollapse">&#9664; R&eacute;duire la sidebar</a>
-            <form action="resultsearch.php" method="post"  class="search">
+             <form action="resultsearch.php" method="post"  class="search">
                 <input type="text" name="search" placeholder="Rechercher">
             </form>
             <?php
@@ -115,94 +106,47 @@ if ( !empty($_POST) ) {
             ?>
             </div>
             </ul>
-        </div>
 
+        </div>
+        <div id="content" class="black">
+        <div class="bloc">
+        <ul>
+        <div class="title">Profil</div>
+        <div class="content">
+         <div class="input medium">
+            <li class="input3 ">Pseudo</li>
+            <li><?=$results[0]['pseudo']?></li>
+        </div>
+        <div class="input medium">
+            <li class="input3">Age</li>
+            <li><?=$results[0]['age']?> ans</li>
+        </div>
+        <div class="input medium">
+            <li class="input3">Sexe</li>
+            <li><?=$results[0]['sexe']?></li>
+        </div>
+        <div class="input medium">
+            <li class="input3">Description</li>
+            <li><?=$results[0]['description']?></li>
+        </div>
+		 <div class="input medium">
+            <li class="input3">Nombre de Topic crées</li>
+            <?php
+            for ($i=0; $i < $countT ; $i++) { 
+         	?>
+            <li class="topiclist"><a href="topic.php?id=<?=$resultT[$i]['id']?>"><?=$resultT[$i]['title']?><?=$resultT[$i]['description']?></a></li>
+            <?php
+        }
+        ?>
+        </div>
+        </ul>
+        </div>
+        </div>
         <div id="content" class="black">
 
-
-            <h1><img src="img/icons/posts.png" alt="" /> Cr&eacute;er un topic</h1>
-            <div class="bloc">
-		<form action="index.php" method="post">
-                <div class="title">Cr&eacute;ation</div>
-                <div class="content">
-                    <div class="input medium">
-                        <label for="input2">Titre du topic</label>
-                        <input type="text" id="input2" name="title">
-                    </div>
-
-                    <div class="input textarea">
-                        <label for="textarea1">Description</label>
-                        <textarea id="textarea1" rows="7" cols="4" name="description"></textarea>
-                    </div>
-
-		    <div class="submit">
-                        <input type="submit" value="Cr&eacute;er">
-                    </div>
-
-                </div>
-		</form>
-            </div>
-
-
-
-
-            <h1><img src="img/icons/posts.png" alt="" /> Liste des topics</h1>
-            <div class="bloc">
-                <div class="title">
-                    Liste
-                </div>
-                <div class="content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Creation</th>
-                                <th>Titre</th>
-                                <th>Auteur</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-			<?php
-
-				$request = $pdo->query('SELECT * FROM topics ORDER BY creation DESC;');
-				$results = $request->fetchAll();
-				foreach ( $results as $result ) {
-
-			?>
-
-                            <tr>
-                                <td><?=$result['creation']?></td>
-                                <td><a href="topic.php?id=<?=$result['id']?>"><?=$result['title']?></a></td>
-                                <td><?php
-
-
-					$request = $pdo->query('SELECT * FROM users WHERE id = ' . $result['creatorId']);
-					$resultB = $request->fetchAll();
-					echo $resultB[0]['pseudo'];
-
-
-				?></td>
-                                <td><?=$result['description']?></td>
-                            </tr>
-
-			<?php
-
-				}
-
-			?>
-
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-
-
-
+        </ul>
+        </div>
         </div>
 
-    </body>
+</body>
 </html>

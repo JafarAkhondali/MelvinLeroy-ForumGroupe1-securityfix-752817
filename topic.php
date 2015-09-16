@@ -22,24 +22,23 @@ $result=$request->fetchAll();
 <style scoped>
 body{
     font:16px sans-serif;
-    background: url(img/851528-metal-wallpaper.jpg)scroll no-repeat 0 0;
+    background: url(img/1440.jpg)scroll no-repeat 0 0;
 }
 h1{
     text-align: center;
     border-radius:5px;
-    background: #212121;
+    background: #8D6E63;
     color:#fff;
-    opacity:0.8;
+    opacity:0.7;
 }
 ul{
-    text-align: center;
-    list-style: none;
+
 }
 .send{
-
     border-radius:5px;
-    background:#535353;
+    background:#8D6E63;
     margin:0 auto;
+<<<<<<< HEAD
     width:190px;
     line-height: 30px;
     text-align: center;
@@ -49,16 +48,17 @@ ul{
     margin:10px auto;
     color: #fff;
     border: solid 1px  #212121;
+=======
+>>>>>>> origin/master
     display:block;
-    opacity: 0.8;
-    height: 35px;
-    transition-duration:0.5s;
+    margin-left: 30%;
 }
 .back{
     border-radius:5px;
-    background: #535353;
+    background: #8D6E63;
     margin:0 auto;
     display:block;
+<<<<<<< HEAD
     border: solid 1px  #212121;
     color: #fff ;
     opacity: 0.8;
@@ -87,19 +87,10 @@ ul{
     border-top-left-radius: 8px;
     opacity: 0.8;
     padding-left: 0;
+=======
+    margin-left: 30%;
+>>>>>>> origin/master
 }
-.content{
-    width: 850px;
-    margin: 0 auto;
-}
-.julientesrelou{
-    text-align: center;
-    padding-left: 10px;
-    margin: 0 auto;
-    display: inline;
-
-}
-
 </style>
 	 <h1><img src="img/icons/posts.png" alt="" /> Messages sur Le topic</h1>
             <div class="bloc">
@@ -114,20 +105,20 @@ ul{
 				$results = $request->fetchAll();
 				foreach ( $results as $result ) {
 
-                $request = $pdo->query('SELECT * FROM users WHERE id = "' .$_SESSION['user']['id'].'"');
-                $resultB = $request->fetchAll();
-            
 			?>
-                <ul class="date">
-                    <li><?=$result['creation']?></li>
-                </ul>    
 
-                            <ul class="msglist">
-                            <div class="popo">
+                            <ul>
+                                <li><?=$result['creation']?><br /><?=nl2br($result['message'])?></li><br />
+                                <li><?php
 
-                                <li><?=$_SESSION['user']['pseudo']?> a écrit :</li>
-                                <li class="julientesrelou"><?=nl2br($result['message'], false)?></li>
-                            </div>
+
+					$request = $pdo->query('SELECT * FROM users WHERE id = "' .$_SESSION['user']['id'].'"');
+					$resultB = $request->fetchAll();
+					echo $_SESSION['user']['pseudo'];
+
+
+				?></li>
+                                <li><?=$result['message']?></li>
                             </ul>
 
 			<?php
@@ -137,6 +128,9 @@ ul{
 			?>
 
 
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <form action="formpostmessage.php?id=<?=$_GET['id']?>" method="post">
