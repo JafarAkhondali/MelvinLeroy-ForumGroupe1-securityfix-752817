@@ -31,17 +31,9 @@ h1{
     color:#fff;
     opacity:0.7;
 }
-.content{
-    border-radius:5px;
-    border:solid 1px #ccc;
-    box-shadow:0.5;
-}
 ul{
     text-align: center;
     list-style: none;
-}
-li{
-    color:#fff;
 }
 .send{
     border-radius:5px;
@@ -56,6 +48,11 @@ li{
     margin:0 auto;
     display:block;
     margin-left: 30%;
+}
+.msglist{
+    border:solid 1px #ccc;
+    border-radius:5px;
+    color:#fff;
 }
 </style>
 	 <h1><img src="img/icons/posts.png" alt="" /> Messages sur Le topic</h1>
@@ -73,19 +70,16 @@ li{
 
                 $request = $pdo->query('SELECT * FROM users WHERE id = "' .$_SESSION['user']['id'].'"');
                 $resultB = $request->fetchAll();
-                echo $_SESSION['user']['pseudo'];
+            
 			?>
+                <ul class="date">
+                    <li><?=$result['creation']?></li>
+                </ul>    
+                            <ul class="msglist">
 
-                            <ul>
-                                <li><?=$result['creation']?>&nbsp;<?=$result['message']?></li>
-                                <li><?php
-
-
-					
-
-
-				?></li>
-                                
+                                <li><?=$_SESSION['user']['pseudo']?> :</li>
+                                <li><?=$result['message']?></li>
+                            
                             </ul>
 
 			<?php
