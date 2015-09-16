@@ -65,7 +65,7 @@ ul{
 			?>
 
                             <ul>
-                                <li><?=$result['creation']?><?=$result['message']?></li>
+                                <li><?=$result['creation']?><br /><?=nl2br($result['message'])?></li><br />
                                 <li><?php
 
 

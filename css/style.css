@@ -550,6 +550,31 @@ body{
 	margin: 1px;
 	padding: 0px;
 }
+a{
+	text-decoration: none;
+	color: white;
+	font-size: 14px;
+}
+.topiclist{
+	margin-bottom: 5px;
+}
+.listemembre>li{
+	margin: 4px 0;
+	padding-left: 10px;
+	font-style: italic;
+}
+.fa-eye{
+	color: lime;
+	vertical-align: 1px;
+	margin-right: 3px;
+}
+.listemembre{
+	margin: 35px 35px 0 35px;
+	border: 1px solid #888;
+	height: 500px;
+	border-radius: 5px;
+	background: #111;
+}
 #content .bloc .content ol{
 	list-style: decimal;
 }
@@ -866,7 +891,14 @@ body{
 	display:inline-block;
 }
 
-#content .bloc label{
+#content .bloc label {
+	display: block;
+	color: #2C2C2C;
+	font-weight: bold;
+	padding-bottom: 10px;
+	font-size: 14px;
+}
+.input3{
 	display: block;
 	color: #2C2C2C;
 	font-weight: bold;

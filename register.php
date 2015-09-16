@@ -18,7 +18,7 @@ if ( !empty($_POST) ) {
 
 	} else {
 
-		$error = 'Les mots de passe sont différents !';
+		$error = 'Les mots de passe sont diff&eacute;rents !';
 
 	}
 }
