@@ -36,11 +36,10 @@ ul{
     list-style: none;
 }
 .send{
-<<<<<<< HEAD
+
     border-radius:5px;
     background:#535353;
     margin:0 auto;
-=======
     width:190px;
     line-height: 30px;
     text-align: center;
@@ -48,11 +47,9 @@ ul{
     border-radius:4px;
     background: #8d6e63;
     margin:10px auto;
->>>>>>> origin/master
     display:block;
 }
 .back{
-<<<<<<< HEAD
     border-radius:5px;
     background: #535353;
     margin:0 auto;
