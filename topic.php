@@ -22,13 +22,13 @@ $result=$request->fetchAll();
 <style scoped>
 body{
     font:16px sans-serif;
-    background: url(img/1440.jpg)scroll no-repeat 0 0;
+    background: url(img/851528-metal-wallpaper.jpg)scroll no-repeat 0 0;
 }
 h1{
     text-align: center;
     border-radius:5px;
-    background: #ffb74d;
-    color:#8D6E63;
+    background: #212121;
+    color:#ccc;
     opacity:0.8;
 }
 ul{
@@ -37,31 +37,33 @@ ul{
 }
 .send{
     border-radius:5px;
-    background:#8D6E63;
+    background:#535353;
     margin:0 auto;
     display:block;
     margin-left: 30%;
 }
 .back{
     border-radius:5px;
-    background: #8D6E63;
+    background: #535353;
     margin:0 auto;
     display:block;
     margin-left: 30%;
+    border: solid;
 }
 .msglist{
-    border:solid 1px #ffb74d;
-    color:#fff;
+    border:solid 1px #212121;
+    color:#ccc;
     margin-top: 0 ;
     border-bottom-left-radius: 8px; 
     border-bottom-right-radius: 8px;
-
+    background: #616161;
+    opacity: 0.8;
 
 }
 .date{
-    border:solid 1px #ffb74d;
-    background: #ffb74d;
-    color: #8D6E63;
+    border:solid 1px #212121;
+    background: #212121;
+    color: #ccc;
     height: 30px;
     padding-top: 10px;
     margin-bottom: 0 ;
