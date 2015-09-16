@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Crée un Article</title>
+	<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<style scoped>
+body{
+	font:16px 'Oxygen' sans-serif;
+	background: url(image/wallpaper-1520964.jpg)scroll no-repeat 0 0;
+}
+h1{
+	position:relative;
+	text-align: center;
+	background:#90A4AE;
+	opacity:0.8;
+	width:550px;
+	border-radius:5px;
+	border:1px solid #000;
+	margin:0 auto;
+	box-shadow: 0 2px 2px #999;
+	color:white;
+}
+.container{
+	background: #90A4AE;
+	opacity:0.8;
+	border-radius:5px;
+	border:1px solid #000;
+	width:550px;
+	height:290px;
+	padding:5px 0 5px 0;
+	margin:8px auto;
+	box-shadow: 0 2px 2px #999;
+}
+form{
+	text-align: center;
+}
+.btn{
+	border:1px solid #fff;
+	color:black;
+	border-radius:5px;
+	background:rgba(255,255,255,0.5);
+	width:200px;
+}
+.textarea{
+	width:450px;
+	height:250px;
+}
+.art{
+	width:450px;
+}
+</style>
+<form action="creer_article.php" method="post">
+	<h1>Crée un topic</h1>
+	<div class="container">
+	<input class="art" type="text" placeholder="Sujet du Topics" name="title">
+	<br />
+	<textarea class="textarea" placeholder="Description Courte du Topic" name="message"></textarea>
+	<br />
+	</div>
+	<input class="btn" type="submit" value="Envoyez">
+</body>
+</html>
