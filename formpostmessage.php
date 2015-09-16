@@ -35,6 +35,7 @@ textarea{
 }
 </style>
 	<div class="container">
+	<h1>Ecrire un message</h1>
 	<form action="postmessage.php?id=<?=$_GET['id']?>" method="post" >
 	<textarea placeholder="Ecris ton message" class="msg" name="message"></textarea>
 	<input type="submit" class="send" value="Envoyer le message">
