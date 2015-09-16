@@ -22,15 +22,13 @@ if ( !empty($_POST) ) {
 
 
 ?><!DOCTYPE html>
-<<<<<<< HEAD
+
 <html lang="en">
 <head>
 <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-=======
 <html>
     <head>
->>>>>>> origin/master
     <meta charset="UTF-8">
         <title>Your Admin Panel</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -93,8 +91,6 @@ if ( !empty($_POST) ) {
                         <li><a href="logout.php">D&eacute;connexion</a></li>
 
                         <li><a href="profile.php">Mon profil</a></li>
-                        <li><a href="logout.php">D&eacute;connection</a></li>
-
                     </ul>
                 </li>
             </ul>
@@ -160,7 +156,7 @@ if ( !empty($_POST) ) {
 
                             <tr>
                                 <td><?=$result['creation']?></td>
-                                <td><a href="topic.php?id=<?=$result['id']?>">Topic <?=$result['id']?> : <?=$result['title']?></a></td>
+                                <td><a href="topic.php?id=<?=$result['id']?>"><?=$result['title']?></a></td>
                                 <td><?php
 
 

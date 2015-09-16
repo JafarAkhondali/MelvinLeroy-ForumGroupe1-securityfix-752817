@@ -101,6 +101,20 @@ $user = $result[0];
         <!--
               CONTENT
                         -->
+        <div class="bloc">
+        <form action="profile.php" method="post">
+                <div class="title">Profil</div>
+                <div class="content">
+                    <div class="input medium">
+                        <label for="input2">pseudo</label>
+                        <input type="text" id="input2" name="pseudo" value="<?=$user['pseudo']?>">
+                    </div>
+                    <div class="input medium">
+                        <label for="input2">email</label>
+                        <input type="text" id="input2" name="email" value="<?=$user['email']?>">
+                    </div>
+                </div>
+            </form>
         <div id="content" class="black">
 
 
@@ -126,6 +140,7 @@ $user = $result[0];
                 </div>
 		</form>
             </div>
+
 
 
 
