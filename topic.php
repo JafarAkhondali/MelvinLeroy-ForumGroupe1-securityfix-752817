@@ -35,24 +35,16 @@ h1{
 -o-box-shadow: 2px 2px 2px #656565;
 box-shadow: 2px 2px 2px #656565;
     opacity:0.7;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 }
 ul{
 text-align: center;
     list-style: none;
 }
 .send{
-<<<<<<< HEAD
     border-radius:5px;
     background:#8D6E63;
     margin:0 auto;
-
-=======
     background:#535353;
->>>>>>> origin/master
     width:190px;
     line-height: 30px;
     text-align: center;
@@ -68,7 +60,6 @@ text-align: center;
 -webkit-box-shadow: 2px 2px 2px #656565;
 -o-box-shadow: 2px 2px 2px #656565;
 box-shadow: 2px 2px 2px #656565;
-<<<<<<< HEAD
 
     margin-left: 30%;
 }
@@ -77,14 +68,12 @@ box-shadow: 2px 2px 2px #656565;
     background: #8D6E63;
     margin:0 auto;
     display:block;
-=======
 }
 .back{
     width:190px;
     line-height: 30px;
     text-align: center;
     color:#fff;
->>>>>>> origin/master
     border: solid 1px  #212121;
     border-radius:4px;
     background:#535353;
@@ -119,11 +108,8 @@ box-shadow: 2px 2px 2px #656565;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     opacity: 0.8;
-<<<<<<< HEAD
     padding-left: 0;
     margin-left: 30%;
-=======
->>>>>>> origin/master
 }
 .content{
     width: 850px;
