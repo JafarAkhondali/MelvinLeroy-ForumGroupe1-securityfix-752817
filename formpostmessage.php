@@ -29,7 +29,8 @@ h1{
 	opacity:0.7;
 }
 textarea{
-	margin-left: 799px;
+	margin:0 auto;
+	display: block;
 }
 .msg{
 	width:300px;
