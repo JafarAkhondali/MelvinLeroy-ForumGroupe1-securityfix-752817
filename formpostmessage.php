@@ -12,8 +12,8 @@ if ( empty($_SESSION['user']) ) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Post-Message</title>
+<meta charset="UTF-8">
+<title>Post-Message</title>
 </head>
 <body>
 <style scoped>
@@ -53,9 +53,6 @@ textarea{
 -o-box-shadow: 2px 2px 2px #656565;
 box-shadow: 2px 2px 2px #656565;
 }
-.imgi{
-	bottom:5px;
-}
 </style>
 	<div class="container">
 	<h1><img src="img/icons/1442499225_new_post.png" alt="" class="imgi" />&nbsp;Ecrire un message</h1>
@@ -63,6 +60,5 @@ box-shadow: 2px 2px 2px #656565;
 	<textarea placeholder="Ecris ton message" class="msg" name="message"></textarea>
 	<input type="submit" class="send" value="Envoyer le message">
 	</form>
-	</div>
 </body>
 </html>
