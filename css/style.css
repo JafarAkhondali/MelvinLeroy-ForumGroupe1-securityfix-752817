@@ -568,6 +568,11 @@ a{
 	vertical-align: 1px;
 	margin-right: 3px;
 }
+.fa-eye.off{
+	color: red;
+	vertical-align: 1px;
+	margin-right: 3px;
+}
 .listemembre{
 	margin: 35px 35px 0 35px;
 	border: 1px solid #888;

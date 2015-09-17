@@ -18,12 +18,13 @@ if ( !empty($_POST) ) {
 }
 
 
-$sql = 'UPDATE users SET action = '.time().' WHERE id = '.intval($_SESSION['id']);
+$sql = 'UPDATE users SET action = NOW() WHERE id = '.$_SESSION['user']['id'];
 $query = $pdo->query($sql);
 
 $limit= time() - (60 * 5);
 
 $sql2 = 'UPDATE users WHERE action < '.$limit;
+$queryB = $pdo->query($sql2);
 
 
 ?><!DOCTYPE html>
@@ -113,9 +114,17 @@ $sql2 = 'UPDATE users WHERE action < '.$limit;
             <div class="listemembre">
             <?php
             for ($i=0; $i < $countD; $i++) { 
+                if(time($results) < $limit) {
+                    ?>
+                        <li><i class="fa fa-eye"></i><a href="profilmembre.php?id=<?=$results[$i]['id']?>"><?=$results[$i]['pseudo']?></a></li>
+                    <?php
+                }
+                else{
                 ?>
-                <li><i class="fa fa-eye"></i><a href="profilmembre.php?id=<?=$results[$i]['id']?>"><?=$results[$i]['pseudo']?></a></li>
+                     <li><i class="fa fa-eye off"></i><a href="profilmembre.php?id=<?=$results[$i]['id']?>"><?=$results[$i]['pseudo']?></a></li>
                 <?php
+                }
+
             }
             ?>
             </div>
