@@ -53,6 +53,9 @@ textarea{
 -o-box-shadow: 2px 2px 2px #656565;
 box-shadow: 2px 2px 2px #656565;
 }
+img{
+	bottom:10px;
+}
 </style>
 	<div class="container">
 	<h1><img src="img/icons/1442499225_new_post.png" alt="" class="imgi" />&nbsp;Ecrire un message</h1>

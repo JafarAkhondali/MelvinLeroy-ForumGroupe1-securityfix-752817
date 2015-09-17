@@ -15,7 +15,6 @@ $result=$request->fetchAll();
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/topic.css">
 	<title>Liste des Messages du topic</title>
 </head>
 <body>
