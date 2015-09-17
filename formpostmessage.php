@@ -19,23 +19,46 @@ if ( empty($_SESSION['user']) ) {
 <style scoped>
 body{
 	font:16px sans-serif;
-	background: url(img/78863411_o.jpg)scroll no-repeat 0 0;
+	background: url(img/message.jpeg)scroll no-repeat 0 0;
+}
+h1{
+	text-align: center;
+	border-radius:5px;
+	background: red;
+	color:#fff;
+	opacity:0.7;
 }
 textarea{
-	margin:0 auto;
+	margin-left: 799px;
 }
 .msg{
 	width:300px;
 	height:200px;
 }
 .send{
-	border-radius:5px;
-	background: blue;
-	margin:0 auto;
+	background: red;
+	width:190px;
+    line-height: 30px;
+    text-align: center;
+    color:#fff;
+    border-radius:4px;
+    margin:10px auto;
+    color: #fff;
+    border: solid 1px  #212121;
+    display:block;
+    opacity: 0.8;
+    height: 35px;
+     -moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+}
+.imgi{
+	bottom:5px;
 }
 </style>
 	<div class="container">
-	<h1>Ecrire un message</h1>
+	<h1><img src="img/icons/1442499225_new_post.png" alt="" class="imgi" />&nbsp;Ecrire un message</h1>
 	<form action="postmessage.php?id=<?=$_GET['id']?>" method="post" >
 	<textarea placeholder="Ecris ton message" class="msg" name="message"></textarea>
 	<input type="submit" class="send" value="Envoyer le message">
