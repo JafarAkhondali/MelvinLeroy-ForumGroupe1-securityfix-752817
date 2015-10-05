@@ -29,64 +29,54 @@ h1{
     border-radius:5px;
     background: #8D6E63;
     color:#fff;
-<<<<<<< HEAD
     opacity:0.8;
--moz-box-shadow:  2px 2px 2px #656565;
--webkit-box-shadow: 2px 2px 2px #656565;
--o-box-shadow: 2px 2px 2px #656565;
-box-shadow: 2px 2px 2px #656565;
-
-=======
+    -moz-box-shadow:  2px 2px 2px #212121;
+   -webkit-box-shadow: 2px 2px 2px #212121;
+-o-box-shadow: 2px 2px 2px #212121;
+box-shadow: 2px 2px 2px #212121;
     opacity:0.7;
->>>>>>> origin/master
+
 }
 ul{
 
 }
 .send{
     border-radius:5px;
-    background:#8D6E63;
+    background:#212121;
     margin:0 auto;
-<<<<<<< HEAD
     width:190px;
     line-height: 30px;
     text-align: center;
     color:#fff;
     border-radius:4px;
-    background: #8d6e63;
+    background: #212121;
     margin:10px auto;
     color: #fff;
     border: solid 1px  #212121;
-=======
->>>>>>> origin/master
     display:block;
-<<<<<<< HEAD
+
     opacity: 0.8;
     height: 35px;
-     -moz-box-shadow:  2px 2px 2px #656565;
--webkit-box-shadow: 2px 2px 2px #656565;
--o-box-shadow: 2px 2px 2px #656565;
-box-shadow: 2px 2px 2px #656565;
+     -moz-box-shadow:  2px 2px 2px #212121;
+-webkit-box-shadow: 2px 2px 2px #212121;
+-o-box-shadow: 2px 2px 2px #212121;
+box-shadow: 2px 2px 2px #212121;
 
-=======
-    margin-left: 30%;
->>>>>>> origin/master
 }
 .back{
     border-radius:5px;
     background: #8D6E63;
     margin:0 auto;
     display:block;
-<<<<<<< HEAD
     border: solid 1px  #212121;
     color: #fff ;
     opacity: 0.8;
     margin-top: 16px;
     height: 35px;
-      -moz-box-shadow:  2px 2px 2px #656565;
--webkit-box-shadow: 2px 2px 2px #656565;
--o-box-shadow: 2px 2px 2px #656565;
-box-shadow: 2px 2px 2px #656565;
+      -moz-box-shadow:  2px 2px 2px #212121;
+-webkit-box-shadow: 2px 2px 2px #212121;
+-o-box-shadow: 2px 2px 2px #212121;
+box-shadow: 2px 2px 2px #212121;
 
 }
 .msglist{
@@ -98,10 +88,10 @@ box-shadow: 2px 2px 2px #656565;
     background: #616161;
     opacity: 0.8;
     padding-left: 0;
-    -moz-box-shadow:  2px 2px 2px #656565;
--webkit-box-shadow: 2px 2px 2px #656565;
--o-box-shadow: 2px 2px 2px #656565;
-box-shadow: 2px 2px 2px #656565;
+    -moz-box-shadow:  2px 2px 2px #212121;
+-webkit-box-shadow: 2px 2px 2px #212121;
+-o-box-shadow: 2px 2px 2px #212121;
+box-shadow: 2px 2px 2px #212121;
 }
 .date{
     border:solid 1px #212121;
@@ -114,11 +104,9 @@ box-shadow: 2px 2px 2px #656565;
     border-top-left-radius: 8px;
     opacity: 0.8;
     padding-left: 0;
-=======
-    margin-left: 30%;
->>>>>>> origin/master
+
 }
-<<<<<<< HEAD
+
 .content{
     width: 850px;
     margin: 0 auto;
@@ -132,8 +120,6 @@ box-shadow: 2px 2px 2px #656565;
 
 }
 
-=======
->>>>>>> origin/master
 </style>
 	 <h1><img src="img/icons/posts.png" alt="" /> Messages sur Le topic</h1>
             <div class="bloc">
