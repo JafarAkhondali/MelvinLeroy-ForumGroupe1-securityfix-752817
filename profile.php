@@ -20,6 +20,14 @@ $req = $pdo->query('SELECT * FROM users WHERE id = ' . $_SESSION['user']['id']);
 $result = $req->fetchAll();
 $user = $result[0];
 
+$sql = 'UPDATE users SET action = NOW() WHERE id = '.$_SESSION['user']['id'];
+$query = $pdo->query($sql);
+
+$limit= time() - (60 * 5);
+
+$sql2 = 'UPDATE users WHERE action < '.$limit;
+$queryB = $pdo->query($sql2);
+
 
 ?><!DOCTYPE html>
 <html>
@@ -109,10 +117,20 @@ $user = $result[0];
             <h2>
             <div class="listemembre">
             <?php
+            // print_r($results);
+            //         die();
             for ($i=0; $i < $countD; $i++) { 
+                 if( time() - 5 * 60 >= $results[$i]['action'] ) {
+                    
                 ?>
-                <li><i class="fa fa-eye"></i><a href="profilmembre.php?id=<?=$results[$i]['id']?>"><?=$results[$i]['pseudo']?></a></li>
+                     <li><i class="fa fa-eye"></i><a href="profilmembre.php?id=<?=$results[$i]['id']?>"><?=$results[$i]['pseudo']?></a></li>
                 <?php
+                }
+                else{
+                ?>
+                     <li><i class="fa fa-eye off"></i><a href="profilmembre.php?id=<?=$results[$i]['id']?>"><?=$results[$i]['pseudo']?></a></li>
+                <?php
+                }
             }
             ?>
             </div>

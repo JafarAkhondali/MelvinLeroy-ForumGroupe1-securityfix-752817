@@ -15,45 +15,61 @@ $result=$request->fetchAll();
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/topic.css">
 	<title>Liste des Messages du topic</title>
 </head>
 <body>
 <style scoped>
 body{
     font:16px sans-serif;
-    background: url(img/1440.jpg)scroll no-repeat 0 0;
+    background: url(img/851528-metal-wallpaper.jpg)scroll no-repeat 0 0;
 }
 h1{
     text-align: center;
     border-radius:5px;
-    background: #8D6E63;
+    background:#212121;
     color:#fff;
     opacity:0.8;
+<<<<<<< HEAD
     -moz-box-shadow:  2px 2px 2px #212121;
    -webkit-box-shadow: 2px 2px 2px #212121;
 -o-box-shadow: 2px 2px 2px #212121;
 box-shadow: 2px 2px 2px #212121;
     opacity:0.7;
 
+=======
+-moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+    opacity:0.7;
+>>>>>>> origin/master
 }
 ul{
-
+text-align: center;
+    list-style: none;
 }
 .send{
     border-radius:5px;
     background:#212121;
     margin:0 auto;
+<<<<<<< HEAD
+=======
+    background:#535353;
+>>>>>>> origin/master
     width:190px;
     line-height: 30px;
     text-align: center;
     color:#fff;
     border-radius:4px;
+<<<<<<< HEAD
     background: #212121;
+=======
+>>>>>>> origin/master
     margin:10px auto;
     color: #fff;
     border: solid 1px  #212121;
     display:block;
+<<<<<<< HEAD
 
     opacity: 0.8;
     height: 35px;
@@ -62,12 +78,23 @@ ul{
 -o-box-shadow: 2px 2px 2px #212121;
 box-shadow: 2px 2px 2px #212121;
 
+=======
+    opacity: 0.8;
+    height: 35px;
+     -moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+
+    margin-left: 30%;
+>>>>>>> origin/master
 }
 .back{
     border-radius:5px;
     background: #8D6E63;
     margin:0 auto;
     display:block;
+<<<<<<< HEAD
     border: solid 1px  #212121;
     color: #fff ;
     opacity: 0.8;
@@ -77,14 +104,35 @@ box-shadow: 2px 2px 2px #212121;
 -webkit-box-shadow: 2px 2px 2px #212121;
 -o-box-shadow: 2px 2px 2px #212121;
 box-shadow: 2px 2px 2px #212121;
+=======
+}
+.back{
+    width:190px;
+    line-height: 30px;
+    text-align: center;
+    color:#fff;
+    border: solid 1px  #212121;
+    border-radius:4px;
+    background:#535353;
+    margin:10px auto;
+    display:block;
+      -moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+>>>>>>> origin/master
 
 }
 .msglist{
-    border:solid 1px #212121;
+    border:solid 1px #FFB74D;
+    border-radius:5px;
+    color:#EEFF41;
+    margin:0 auto;
     color:#fff;
-    margin-top: 0 ;
+    margin-top: 0;
     border-bottom-left-radius: 8px; 
     border-bottom-right-radius: 8px;
+<<<<<<< HEAD
     background: #616161;
     opacity: 0.8;
     padding-left: 0;
@@ -92,21 +140,31 @@ box-shadow: 2px 2px 2px #212121;
 -webkit-box-shadow: 2px 2px 2px #212121;
 -o-box-shadow: 2px 2px 2px #212121;
 box-shadow: 2px 2px 2px #212121;
+=======
+    -moz-box-shadow:  2px 2px 2px #656565;
+-webkit-box-shadow: 2px 2px 2px #656565;
+-o-box-shadow: 2px 2px 2px #656565;
+box-shadow: 2px 2px 2px #656565;
+>>>>>>> origin/master
 }
 .date{
     border:solid 1px #212121;
     background: #212121;
     color: #ccc;
-    height: 30px;
     padding-top: 10px;
-    margin-bottom: 0 ;
+    margin-bottom: 0;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     opacity: 0.8;
     padding-left: 0;
+<<<<<<< HEAD
 
 }
 
+=======
+    margin-left: 30%;
+}
+>>>>>>> origin/master
 .content{
     width: 850px;
     margin: 0 auto;
@@ -114,12 +172,14 @@ box-shadow: 2px 2px 2px #212121;
 }
 .julientesrelou{
     text-align: center;
-    padding-left: 10px;
     margin: 0 auto;
     display: inline;
 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 </style>
 	 <h1><img src="img/icons/posts.png" alt="" /> Messages sur Le topic</h1>
             <div class="bloc">
@@ -134,20 +194,17 @@ box-shadow: 2px 2px 2px #212121;
 				$results = $request->fetchAll();
 				foreach ( $results as $result ) {
 
+                $request = $pdo->query('SELECT * FROM users WHERE id = "' .$_SESSION['user']['id'].'"');
+                    $resultB = $request->fetchAll();
+       
 			?>
+                            <ul class="date">
+                                <li><?=$result['creation']?></li>
+                            </ul>    
 
-                            <ul>
-                                <li><?=$result['creation']?><br /><?=nl2br($result['message'])?></li><br />
-                                <li><?php
-
-
-					$request = $pdo->query('SELECT * FROM users WHERE id = "' .$_SESSION['user']['id'].'"');
-					$resultB = $request->fetchAll();
-					echo $_SESSION['user']['pseudo'];
-
-
-				?></li>
-                                <li><?=$result['message']?></li>
+                            <ul class="msglist">
+                                <li><?=$_SESSION['user']['pseudo']?> a écrit :</li>
+                                <li class="julientesrelou"><?=nl2br($result['message'])?></li>
                             </ul>
 
 			<?php
@@ -155,11 +212,6 @@ box-shadow: 2px 2px 2px #212121;
 				}
 
 			?>
-
-
-
-                        </tbody>
-                    </table>
                 </div>
             </div>
             <form action="formpostmessage.php?id=<?=$_GET['id']?>" method="post">
