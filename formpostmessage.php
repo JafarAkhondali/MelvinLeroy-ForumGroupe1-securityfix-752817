@@ -16,6 +16,9 @@ if ( empty($_SESSION['user']) ) {
 <title>Post-Message</title>
 </head>
 <body>
+
+
+
 <style scoped>
 body{
 	font:16px sans-serif;
@@ -29,8 +32,7 @@ h1{
 	opacity:0.7;
 }
 textarea{
-	margin:0 auto;
-	display: block;
+	margin-left: 799px;
 }
 .msg{
 	width:300px;
@@ -54,14 +56,14 @@ textarea{
 -o-box-shadow: 2px 2px 2px #656565;
 box-shadow: 2px 2px 2px #656565;
 }
-img{
-	bottom:10px;
-}
+<?php
+echo 'test';
+?>
 </style>
 	<div class="container">
 	<h1><img src="img/icons/1442499225_new_post.png" alt="" class="imgi" />&nbsp;Ecrire un message</h1>
 	<form action="postmessage.php?id=<?=$_GET['id']?>" method="post" >
-	<textarea placeholder="Ecris ton message" class="msg" name="message"></textarea>
+	<textarea placeholder="Ecris ton message" class="msg" name="textmessage"></textarea>
 	<input type="submit" class="send" value="Envoyer le message">
 	</form>
 </body>

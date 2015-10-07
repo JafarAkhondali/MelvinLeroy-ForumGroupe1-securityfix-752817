@@ -1,14 +1,20 @@
 <?php
 
 include('includes/db.php');
+include('includes/forum.php');
 
 if ( empty($_SESSION['user']) ) {
 	header('Location: login.php');
 	die();
 }
 
-$request=$pdo->query('SELECT * FROM messages WHERE topicId="'.$_GET['id'].'" ORDER BY creation DESC;');
-$result=$request->fetchAll();
+
+    $forum = new forum($pdo);
+    $result = $forum->afficherMessageTopic(
+            $_GET['id']
+        );
+    // print_r($result);
+    // die();
 
 ?>
 <!DOCTYPE html>
@@ -34,15 +40,13 @@ h1{
 -o-box-shadow: 2px 2px 2px #656565;
 box-shadow: 2px 2px 2px #656565;
     opacity:0.7;
+
 }
 ul{
 text-align: center;
     list-style: none;
 }
 .send{
-    border-radius:5px;
-    background:#8D6E63;
-    margin:0 auto;
     background:#535353;
     width:190px;
     line-height: 30px;
@@ -59,14 +63,6 @@ text-align: center;
 -webkit-box-shadow: 2px 2px 2px #656565;
 -o-box-shadow: 2px 2px 2px #656565;
 box-shadow: 2px 2px 2px #656565;
-
-    margin-left: 30%;
-}
-.back{
-    border-radius:5px;
-    background: #8D6E63;
-    margin:0 auto;
-    display:block;
 }
 .back{
     width:190px;
@@ -97,18 +93,19 @@ box-shadow: 2px 2px 2px #656565;
 -webkit-box-shadow: 2px 2px 2px #656565;
 -o-box-shadow: 2px 2px 2px #656565;
 box-shadow: 2px 2px 2px #656565;
+padding: 7px 0;
 }
 .date{
     border:solid 1px #212121;
     background: #212121;
     color: #ccc;
     padding-top: 10px;
+    padding-left: 0;
     margin-bottom: 0;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     opacity: 0.8;
-    padding-left: 0;
-    margin-left: 30%;
+    padding-bottom: 7px;
 }
 .content{
     width: 850px;
@@ -140,11 +137,11 @@ box-shadow: 2px 2px 2px #656565;
        
 			?>
                             <ul class="date">
-                                <li><?=$result['creation']?></li>
+                                <li class="dateline"><?=$result['creation']?></li>
                             </ul>    
 
                             <ul class="msglist">
-                                <li><?=$_SESSION['user']['pseudo']?> a écrit :</li>
+                                <li><b><i><?=$_SESSION['user']['pseudo']?></i></b> a écrit :</li><br><br>
                                 <li class="julientesrelou"><?=nl2br($result['message'])?></li>
                             </ul>
 

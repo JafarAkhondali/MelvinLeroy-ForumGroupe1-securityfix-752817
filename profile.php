@@ -1,6 +1,7 @@
 <?php
 
 include('includes/db.php');
+include('includes/forum.php');
 
 if ( empty($_SESSION['user']) ) {
 	header('Location: login.php');
@@ -9,24 +10,33 @@ if ( empty($_SESSION['user']) ) {
 
 
 if ( !empty($_POST) ) {
-	$pdo->query(
-		'UPDATE users SET email = "' . $_POST['email'] . '", pseudo = "' . $_POST['pseudo'] . '", age = "' . $_POST['age'] . '", sexe = "' . $_POST['sexe'] . '", description = "' . $_POST['description'] . '" WHERE id = ' . $_SESSION['user']['id']
-	);
+    $forum = new forum($pdo);
+    $request = $forum->changerInfoPerso(
+        $_POST['email'],
+        $_POST['pseudo'],
+        $_POST['age'],
+        $_POST['sexe'],
+        $_POST['description'],
+        $_SESSION['user']['id']
+    );
 	header('Location: profile.php');
 	die();
 }
 
-$req = $pdo->query('SELECT * FROM users WHERE id = ' . $_SESSION['user']['id']);
-$result = $req->fetchAll();
+    $forum = new forum($pdo);
+    $req = $forum->searchByUserId(
+        $_SESSION['user']['id']
+    );
+
 $user = $result[0];
 
-$sql = 'UPDATE users SET action = NOW() WHERE id = '.$_SESSION['user']['id'];
-$query = $pdo->query($sql);
+// $sql = 'UPDATE users SET action = NOW() WHERE id = '.$_SESSION['user']['id'];
+// $query = $pdo->query($sql);
 
-$limit= time() - (60 * 5);
+// $limit= time() - (60 * 5);
 
-$sql2 = 'UPDATE users WHERE action < '.$limit;
-$queryB = $pdo->query($sql2);
+// $sql2 = 'UPDATE users WHERE action < '.$limit;
+// $queryB = $pdo->query($sql2);
 
 
 ?><!DOCTYPE html>
@@ -109,29 +119,29 @@ $queryB = $pdo->query($sql2);
                 <input type="text" name="search" placeholder="Rechercher">
             </form>
              <?php
-            $request = $pdo->query('SELECT * FROM users ORDER BY pseudo ASC;');
-            $results = $request->fetchAll();
+             $forum = new forum ($pdo);
+            $results = $forum->userList();
             $countD=count($results);
             ?>
             <ul>
             <h2>
             <div class="listemembre">
             <?php
-            // print_r($results);
             //         die();
             for ($i=0; $i < $countD; $i++) { 
-                 if( time() - 5 * 60 >= $results[$i]['action'] ) {
+                
+                // $number = date("U", $results[$i]['action'])->getTimestamp();
+                //  if( time() - 5 * 60 >= $number){
                     
                 ?>
                      <li><i class="fa fa-eye"></i><a href="profilmembre.php?id=<?=$results[$i]['id']?>"><?=$results[$i]['pseudo']?></a></li>
                 <?php
                 }
-                else{
-                ?>
-                     <li><i class="fa fa-eye off"></i><a href="profilmembre.php?id=<?=$results[$i]['id']?>"><?=$results[$i]['pseudo']?></a></li>
-                <?php
-                }
-            }
+                // else{
+                // ?>
+                      <!-- <li><i class="fa fa-eye off"></i><a href="profilmembre.php?id=<?=$results[$i]['id']?>"><?=$results[$i]['pseudo']?></a></li> -->
+                 <?php
+                // }
             ?>
             </div>
         </div>

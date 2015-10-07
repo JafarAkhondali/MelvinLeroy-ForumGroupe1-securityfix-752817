@@ -9,9 +9,9 @@ if ( empty($_SESSION['user']) ) {
 
   $request = $pdo->query('SELECT * FROM users WHERE id= "' . $_GET['id'] . '";');
   $results = $request->fetchAll();
-  $requestT=$pdo->query('SELECT * FROM topics WHERE creatorId= "' . $_GET['id'] . '";');
-  $resultT=$requestT->fetchAll();
-  $countT=count($resultT);
+  $requestB=$pdo->query('SELECT * FROM topics WHERE creatorId= "' . $_GET['id'] . '";');
+  $resultB=$requestB->fetchAll();
+  $countT=count($resultB);
 ?>
 
 <!DOCTYPE html>
@@ -90,9 +90,9 @@ if ( empty($_SESSION['user']) ) {
                 <input type="text" name="search" placeholder="Rechercher">
             </form>
             <?php
-            $request = $pdo->query('SELECT * FROM users ORDER BY pseudo ASC;');
-            $results = $request->fetchAll();
-            $countD=count($results);
+            $requestC = $pdo->query('SELECT * FROM users ORDER BY pseudo ASC;');
+            $resultsC = $requestC->fetchAll();
+            $countD=count($resultsC);
             ?>
             <ul>
             <h2>
@@ -100,7 +100,7 @@ if ( empty($_SESSION['user']) ) {
             <?php
             for ($i=0; $i < $countD; $i++) { 
                 ?>
-                <li><i class="fa fa-eye"></i><a href="profilmembre.php?id=<?=$results[$i]['id']?>"><?=$results[$i]['pseudo']?></a></li>
+                <li><i class="fa fa-eye"></i><a href="profilmembre.php?id=<?=$resultsC[$i]['id']?>"><?=$resultsC[$i]['pseudo']?></a></li>
                 <?php
             }
             ?>
@@ -108,6 +108,10 @@ if ( empty($_SESSION['user']) ) {
             </ul>
 
         </div>
+        <?php 
+        $requestD = $pdo->query('SELECT * FROM users WHERE id = "' . $_GET['id'] . '" ORDER BY pseudo ASC;');
+        $resultsD = $requestD->fetchAll();
+        ?>
         <div id="content" class="black">
         <div class="bloc">
         <ul>
@@ -115,26 +119,26 @@ if ( empty($_SESSION['user']) ) {
         <div class="content">
          <div class="input medium">
             <li class="input3 ">Pseudo</li>
-            <li><?=$results[0]['pseudo']?></li>
+            <li><?=$resultsD[0]['pseudo']?></li>
         </div>
         <div class="input medium">
             <li class="input3">Age</li>
-            <li><?=$results[0]['age']?> ans</li>
+            <li><?=$resultsD[0]['age']?> ans</li>
         </div>
         <div class="input medium">
             <li class="input3">Sexe</li>
-            <li><?=$results[0]['sexe']?></li>
+            <li><?=$resultsD[0]['sexe']?></li>
         </div>
         <div class="input medium">
             <li class="input3">Description</li>
-            <li><?=$results[0]['description']?></li>
+            <li><?=$resultsD[0]['description']?></li>
         </div>
 		 <div class="input medium">
             <li class="input3">Nombre de Topic crées</li>
             <?php
             for ($i=0; $i < $countT ; $i++) { 
          	?>
-            <li class="topiclist"><a href="topic.php?id=<?=$resultT[$i]['id']?>"><?=$resultT[$i]['title']?><?=$resultT[$i]['description']?></a></li>
+            <li class="topiclist"><a href="topic.php?id=<?=$resultB[$i]['id']?>"><?=$resultB[$i]['title']?><?=$resultB[$i]['description']?></a></li>
             <?php
         }
         ?>
