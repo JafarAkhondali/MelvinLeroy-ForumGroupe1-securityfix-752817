@@ -12,8 +12,15 @@ if ( empty($_SESSION['user']) ) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
+	<meta charset="UTF-8">
+	<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
+	<title>Post-Message</title>
+=======
 <meta charset="UTF-8">
 <title>Post-Message</title>
+>>>>>>> origin/master
 </head>
 <body>
 
